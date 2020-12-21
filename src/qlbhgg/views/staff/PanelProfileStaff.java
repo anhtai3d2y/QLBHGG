@@ -508,7 +508,7 @@ public class PanelProfileStaff extends javax.swing.JPanel {
         jSeparator4.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jDashboardProfile.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, 10, 700));
+        jDashboardProfile.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, 10, 790));
 
         jLabelPreviousYear.setBackground(new java.awt.Color(255, 255, 255));
         jLabelPreviousYear.setForeground(new java.awt.Color(0, 0, 0));
@@ -1064,11 +1064,9 @@ public class PanelProfileStaff extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1342, Short.MAX_VALUE)
+            .addGap(0, 1330, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(jDashboardProfile, javax.swing.GroupLayout.DEFAULT_SIZE, 1330, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addComponent(jDashboardProfile, javax.swing.GroupLayout.DEFAULT_SIZE, 1330, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

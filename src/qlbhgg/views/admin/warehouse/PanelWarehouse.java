@@ -35,8 +35,6 @@ public class PanelWarehouse extends javax.swing.JPanel {
     
     public PanelWarehouse() throws SQLException{
         initComponents();
-        
-        
         TypeOfGoodDao.setComboboxType(jComboBoxType);
         showProducts(ListGoods, countProduct);
         
@@ -157,7 +155,6 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelSkipToEnd = new javax.swing.JLabel();
         jLabelSkipToStart = new javax.swing.JLabel();
         jPanelGood6 = new javax.swing.JPanel();
-        jCheckBox6 = new javax.swing.JCheckBox();
         jLabelMSP6 = new javax.swing.JLabel();
         jLabelImage6 = new javax.swing.JLabel();
         jLabelName6 = new javax.swing.JLabel();
@@ -168,8 +165,8 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelAmount6 = new javax.swing.JLabel();
         jLabelUnit6 = new javax.swing.JLabel();
         jLabelSetting6 = new javax.swing.JLabel();
+        jLabelSerial6 = new javax.swing.JLabel();
         jPanelGood1 = new javax.swing.JPanel();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jLabelMSP1 = new javax.swing.JLabel();
         jLabelImage1 = new javax.swing.JLabel();
         jLabelName1 = new javax.swing.JLabel();
@@ -180,8 +177,8 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelAmount1 = new javax.swing.JLabel();
         jLabelUnit1 = new javax.swing.JLabel();
         jLabelSetting1 = new javax.swing.JLabel();
+        jLabelSerial1 = new javax.swing.JLabel();
         jPanelHeader = new javax.swing.JPanel();
-        jCheckBoxAll = new javax.swing.JCheckBox();
         jLabelMaSP = new javax.swing.JLabel();
         jLabelImage = new javax.swing.JLabel();
         jLabelName = new javax.swing.JLabel();
@@ -192,8 +189,8 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelAmount = new javax.swing.JLabel();
         jLabelUnit = new javax.swing.JLabel();
         jLabelSettings = new javax.swing.JLabel();
+        jLabelSerial = new javax.swing.JLabel();
         jPanelGood5 = new javax.swing.JPanel();
-        jCheckBox5 = new javax.swing.JCheckBox();
         jLabelMSP5 = new javax.swing.JLabel();
         jLabelImage5 = new javax.swing.JLabel();
         jLabelName5 = new javax.swing.JLabel();
@@ -204,8 +201,8 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelAmount5 = new javax.swing.JLabel();
         jLabelUnit5 = new javax.swing.JLabel();
         jLabelSetting5 = new javax.swing.JLabel();
+        jLabelSerial5 = new javax.swing.JLabel();
         jPanelGood2 = new javax.swing.JPanel();
-        jCheckBox2 = new javax.swing.JCheckBox();
         jLabelMSP2 = new javax.swing.JLabel();
         jLabelImage2 = new javax.swing.JLabel();
         jLabelName2 = new javax.swing.JLabel();
@@ -216,8 +213,8 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelAmount2 = new javax.swing.JLabel();
         jLabelUnit2 = new javax.swing.JLabel();
         jLabelSetting2 = new javax.swing.JLabel();
+        jLabelSerial2 = new javax.swing.JLabel();
         jPanelGood3 = new javax.swing.JPanel();
-        jCheckBox3 = new javax.swing.JCheckBox();
         jLabelMSP3 = new javax.swing.JLabel();
         jLabelImage3 = new javax.swing.JLabel();
         jLabelName3 = new javax.swing.JLabel();
@@ -228,8 +225,8 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelAmount3 = new javax.swing.JLabel();
         jLabelUnit3 = new javax.swing.JLabel();
         jLabelSetting3 = new javax.swing.JLabel();
+        jLabelSerial3 = new javax.swing.JLabel();
         jPanelGood7 = new javax.swing.JPanel();
-        jCheckBox7 = new javax.swing.JCheckBox();
         jLabelMSP7 = new javax.swing.JLabel();
         jLabelImage7 = new javax.swing.JLabel();
         jLabelName7 = new javax.swing.JLabel();
@@ -240,8 +237,8 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelAmount7 = new javax.swing.JLabel();
         jLabelUnit7 = new javax.swing.JLabel();
         jLabelSetting7 = new javax.swing.JLabel();
+        jLabelSerial7 = new javax.swing.JLabel();
         jPanelGood4 = new javax.swing.JPanel();
-        jCheckBox4 = new javax.swing.JCheckBox();
         jLabelMSP4 = new javax.swing.JLabel();
         jLabelImage4 = new javax.swing.JLabel();
         jLabelName4 = new javax.swing.JLabel();
@@ -252,6 +249,7 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelAmount4 = new javax.swing.JLabel();
         jLabelUnit4 = new javax.swing.JLabel();
         jLabelSetting4 = new javax.swing.JLabel();
+        jLabelSerial4 = new javax.swing.JLabel();
         jPanelControlQLK = new javax.swing.JPanel();
         jComboBoxType = new javax.swing.JComboBox<>();
         jTextFieldSearchProduct = new javax.swing.JTextField();
@@ -378,11 +376,6 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jPanelGood6.setForeground(new java.awt.Color(255, 255, 255));
         jPanelGood6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jCheckBox6.setBackground(new java.awt.Color(215, 220, 222));
-        jCheckBox6.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox6.setBorder(null);
-        jPanelGood6.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 20, 50));
-
         jLabelMSP6.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMSP6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelMSP6.setForeground(new java.awt.Color(0, 0, 0));
@@ -463,15 +456,16 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelSetting6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_settings_20px.png"))); // NOI18N
         jPanelGood6.add(jLabelSetting6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 80, 80));
 
+        jLabelSerial6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelSerial6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelSerial6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSerial6.setText("STT");
+        jPanelGood6.add(jLabelSerial6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 80));
+
         jPanelGood1.setBackground(new java.awt.Color(255, 255, 255));
         jPanelGood1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelGood1.setForeground(new java.awt.Color(255, 255, 255));
         jPanelGood1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setBorder(null);
-        jPanelGood1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 20, 50));
 
         jLabelMSP1.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMSP1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -553,15 +547,16 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelSetting1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_settings_20px.png"))); // NOI18N
         jPanelGood1.add(jLabelSetting1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 80, 80));
 
+        jLabelSerial1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelSerial1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelSerial1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSerial1.setText("STT");
+        jPanelGood1.add(jLabelSerial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 80));
+
         jPanelHeader.setBackground(new java.awt.Color(102, 178, 255));
         jPanelHeader.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelHeader.setForeground(new java.awt.Color(255, 255, 255));
         jPanelHeader.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jCheckBoxAll.setBackground(new java.awt.Color(102, 178, 255));
-        jCheckBoxAll.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBoxAll.setBorder(null);
-        jPanelHeader.add(jCheckBoxAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 20, 20));
 
         jLabelMaSP.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMaSP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -638,15 +633,16 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelSettings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_settings_20px.png"))); // NOI18N
         jPanelHeader.add(jLabelSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 80, 40));
 
+        jLabelSerial.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelSerial.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelSerial.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSerial.setText("STT");
+        jPanelHeader.add(jLabelSerial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 40));
+
         jPanelGood5.setBackground(new java.awt.Color(255, 255, 255));
         jPanelGood5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelGood5.setForeground(new java.awt.Color(255, 255, 255));
         jPanelGood5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jCheckBox5.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox5.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox5.setBorder(null);
-        jPanelGood5.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 20, 50));
 
         jLabelMSP5.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMSP5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -728,15 +724,16 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelSetting5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_settings_20px.png"))); // NOI18N
         jPanelGood5.add(jLabelSetting5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 80, 80));
 
+        jLabelSerial5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelSerial5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelSerial5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSerial5.setText("STT");
+        jPanelGood5.add(jLabelSerial5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 80));
+
         jPanelGood2.setBackground(new java.awt.Color(215, 220, 222));
         jPanelGood2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelGood2.setForeground(new java.awt.Color(255, 255, 255));
         jPanelGood2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jCheckBox2.setBackground(new java.awt.Color(215, 220, 222));
-        jCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox2.setBorder(null);
-        jPanelGood2.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 20, 50));
 
         jLabelMSP2.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMSP2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -818,15 +815,16 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelSetting2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_settings_20px.png"))); // NOI18N
         jPanelGood2.add(jLabelSetting2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 80, 80));
 
+        jLabelSerial2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelSerial2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelSerial2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSerial2.setText("STT");
+        jPanelGood2.add(jLabelSerial2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 80));
+
         jPanelGood3.setBackground(new java.awt.Color(255, 255, 255));
         jPanelGood3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelGood3.setForeground(new java.awt.Color(255, 255, 255));
         jPanelGood3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jCheckBox3.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox3.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox3.setBorder(null);
-        jPanelGood3.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 20, 50));
 
         jLabelMSP3.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMSP3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -908,15 +906,16 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelSetting3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_settings_20px.png"))); // NOI18N
         jPanelGood3.add(jLabelSetting3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 80, 80));
 
+        jLabelSerial3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelSerial3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelSerial3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSerial3.setText("STT");
+        jPanelGood3.add(jLabelSerial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 80));
+
         jPanelGood7.setBackground(new java.awt.Color(255, 255, 255));
         jPanelGood7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelGood7.setForeground(new java.awt.Color(255, 255, 255));
         jPanelGood7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jCheckBox7.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox7.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox7.setBorder(null);
-        jPanelGood7.add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 20, 50));
 
         jLabelMSP7.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMSP7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -998,15 +997,16 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelSetting7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_settings_20px.png"))); // NOI18N
         jPanelGood7.add(jLabelSetting7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 80, 80));
 
+        jLabelSerial7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelSerial7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelSerial7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSerial7.setText("STT");
+        jPanelGood7.add(jLabelSerial7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 80));
+
         jPanelGood4.setBackground(new java.awt.Color(215, 220, 222));
         jPanelGood4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelGood4.setForeground(new java.awt.Color(255, 255, 255));
         jPanelGood4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jCheckBox4.setBackground(new java.awt.Color(215, 220, 222));
-        jCheckBox4.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox4.setBorder(null);
-        jPanelGood4.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 20, 50));
 
         jLabelMSP4.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMSP4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1087,6 +1087,12 @@ public class PanelWarehouse extends javax.swing.JPanel {
         jLabelSetting4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelSetting4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_settings_20px.png"))); // NOI18N
         jPanelGood4.add(jLabelSetting4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 0, 80, 80));
+
+        jLabelSerial4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelSerial4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelSerial4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSerial4.setText("STT");
+        jPanelGood4.add(jLabelSerial4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 80));
 
         javax.swing.GroupLayout jPanelControlPageProductLayout = new javax.swing.GroupLayout(jPanelControlPageProduct);
         jPanelControlPageProduct.setLayout(jPanelControlPageProductLayout);
@@ -1298,7 +1304,7 @@ public class PanelWarehouse extends javax.swing.JPanel {
     private void jLabelSkipToEndMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipToEndMouseClicked
         // TODO add your handling code here:
         int jlabelrighta = Integer.parseInt(jTextFieldPageProduct.getText());
-        int jlabelrightb = countProduct / 7 + setPageProduct;
+        int jlabelrightb = countProduct / 7  + setPageProduct;
         if (jlabelrighta < jlabelrightb) {
             jTextFieldPageProduct.setText(String.valueOf(countProduct / 7 + setPageProduct));
             try {
@@ -1429,14 +1435,6 @@ public class PanelWarehouse extends javax.swing.JPanel {
     private javax.swing.JButton jButtonAddCustomer;
     private javax.swing.JButton jButtonDeleteCustomer;
     private javax.swing.JButton jButtonEditCustomer;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBoxAll;
     private javax.swing.JComboBox<String> jComboBoxType;
     private javax.swing.JPanel jDashboardQLK;
     private javax.swing.JLabel jLabelAmount;
@@ -1500,6 +1498,14 @@ public class PanelWarehouse extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelPriceImport;
     private javax.swing.JLabel jLabelRight;
     private javax.swing.JLabel jLabelSearchProduct;
+    private javax.swing.JLabel jLabelSerial;
+    private javax.swing.JLabel jLabelSerial1;
+    private javax.swing.JLabel jLabelSerial2;
+    private javax.swing.JLabel jLabelSerial3;
+    private javax.swing.JLabel jLabelSerial4;
+    private javax.swing.JLabel jLabelSerial5;
+    private javax.swing.JLabel jLabelSerial6;
+    private javax.swing.JLabel jLabelSerial7;
     private javax.swing.JLabel jLabelSetting1;
     private javax.swing.JLabel jLabelSetting2;
     private javax.swing.JLabel jLabelSetting3;

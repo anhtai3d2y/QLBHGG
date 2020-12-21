@@ -70,7 +70,7 @@ public class UsersDao {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
-            String sql = "select * from users where user_name = '" + username + "'";
+            String sql = "select * from users where username = '" + username + "'";
             ResultSet resulSet = statement.executeQuery(sql);
             while (resulSet.next()) {
                 Users u = Users.getFromResultSet(resulSet);

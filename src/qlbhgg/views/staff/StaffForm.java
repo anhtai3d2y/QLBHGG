@@ -33,8 +33,6 @@ public class StaffForm extends javax.swing.JFrame {
     public StaffForm(Users u) throws SQLException {
         userLogin = u;
         initComponents();
-//        jLabelUserLogin.setText(userLogin.getFullname());
-
         SetDashboard sd = new SetDashboard(jPanelBody);
         sd.setStaffView(jPanelQLBH, jLabelQLBH);
         ArrayList<ListKind> list = new ArrayList<>();
@@ -44,6 +42,10 @@ public class StaffForm extends javax.swing.JFrame {
         list.add(new ListKind("TTKH", jPanelTTKH, jLabelTTKH));
         list.add(new ListKind("TK", jPanelTK, jLabelTK));
         sd.setEvent(list);
+        jPanelBody.removeAll();
+        jPanelBody.add(new PanelSale());
+        jPanelBody.validate();
+        jPanelBody.repaint();
     }
 
     private ImageIcon scaleFrameSearch(String path) {
@@ -148,7 +150,7 @@ public class StaffForm extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_gear_100px_1.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/qlbhgg/Icon/icons8_overwolf_100px.png"))); // NOI18N
         jLabel6.setText("KMA-Gear");
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelMenu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 150));
@@ -367,7 +369,7 @@ public class StaffForm extends javax.swing.JFrame {
         jBackground.add(jPanelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 900));
 
         jPanelBody.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelBody.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelBody.setLayout(new java.awt.CardLayout());
         jBackground.add(jPanelBody, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 1330, 870));
 
         jPanelBar.setBackground(new java.awt.Color(0, 0, 0));

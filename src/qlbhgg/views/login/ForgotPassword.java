@@ -385,7 +385,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         jLabelTitle.setBackground(new java.awt.Color(0, 0, 0));
         jLabelTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_gear_25px.png"))); // NOI18N
+        jLabelTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/qlbhgg/Icon/icons8_overwolf_25px.png"))); // NOI18N
         jLabelTitle.setText("Quên mật khẩu | Không thể đăng nhập");
 
         javax.swing.GroupLayout jPanelTitleLayout = new javax.swing.GroupLayout(jPanelTitle);

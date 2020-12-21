@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/G:/Study/University/Nam%203/HK1/PTPMUD/QLBHGG/src/qlbhgg/dao/WorkDayDao.java</file>
-            <file>file:/G:/Study/University/Nam%203/HK1/PTPMUD/QLBHGG/src/Controller/InterfaceController/SetDashboard.java</file>
+            <file>file:/G:/Study/University/Nam%203/HK1/PTPMUD/QLBHGG/src/qlbhgg/views/admin/warehouse/PanelWarehouse.java</file>
+            <file>file:/G:/Study/University/Nam%203/HK1/PTPMUD/QLBHGG/src/qlbhgg/views/staff/PanelSale.java</file>
             <file>file:/G:/Study/University/Nam%203/HK1/PTPMUD/QLBHGG/src/qlbhgg/views/login/LoginForm.java</file>
             <file>file:/G:/Study/University/Nam%203/HK1/PTPMUD/QLBHGG/src/qlbhgg/views/admin/AdminForm.java</file>
+            <file>file:/G:/Study/University/Nam%203/HK1/PTPMUD/QLBHGG/src/qlbhgg/views/admin/bill/PanelBill.java</file>
             <file>file:/G:/Study/University/Nam%203/HK1/PTPMUD/QLBHGG/src/qlbhgg/views/staff/StaffForm.java</file>
-            <file>file:/G:/Study/University/Nam%203/HK1/PTPMUD/QLBHGG/src/qlbhgg/views/admin/staff/PanelStaff.java</file>
-            <file>file:/G:/Study/University/Nam%203/HK1/PTPMUD/QLBHGG/src/qlbhgg/views/staff/PanelProfileStaff.java</file>
         </group>
     </open-files>
 </project-private>

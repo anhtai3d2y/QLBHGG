@@ -373,7 +373,7 @@ public class LoginForm extends javax.swing.JFrame {
         lbDangNhap.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lbDangNhap.setForeground(new java.awt.Color(255, 255, 255));
         lbDangNhap.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_gear_125px.png"))); // NOI18N
+        lbDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/qlbhgg/Icon/icons8_overwolf_125px_1.png"))); // NOI18N
         jPanelLogin.add(lbDangNhap);
         lbDangNhap.setBounds(140, 30, 110, 110);
 
