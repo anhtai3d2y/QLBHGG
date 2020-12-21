@@ -374,7 +374,7 @@ public class ChancePassword extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSendcodeMouseExited
 
     private void jButtonSendcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSendcodeActionPerformed
-        pincode = qlbhgg.mailhandle.MailHandle.SendPincode(user.getEmail(), "Đổi mật khẩu đăng nhập KMA-Gear");
+        pincode = qlbhgg.controller.MailController.MailHandle.SendPincode(user.getEmail(), "Đổi mật khẩu đăng nhập KMA-Gear");
     }//GEN-LAST:event_jButtonSendcodeActionPerformed
 
     /**

@@ -1061,7 +1061,7 @@ public class EditStaff extends javax.swing.JFrame {
                 jLabelErrorEmail.setText("Email đã tồn tại");
                 jLabelErrorEmail.setVisible(true);
             } else {
-                pinCode = qlbhgg.mailhandle.MailHandle.SendPincode(jTextFieldEmailStaff.getText(), "Mã xác minh đăng lý tài khoản KMA-Gear");
+                pinCode = qlbhgg.controller.MailController.MailHandle.SendPincode(jTextFieldEmailStaff.getText(), "Mã xác minh đăng lý tài khoản KMA-Gear");
             }
         } catch (SQLException ex) {
             Logger.getLogger(EditStaff.class.getName()).log(Level.SEVERE, null, ex);

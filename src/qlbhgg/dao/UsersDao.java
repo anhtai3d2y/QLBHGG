@@ -7,7 +7,6 @@ package qlbhgg.dao;
 
 import qlbhgg.models.Users;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,8 +20,8 @@ import java.util.logging.Logger;
  * @author acer
  */
 public class UsersDao {
-
-    Connection connection = ConnectToDatabase.getInstance().getConnection();
+    
+    
 
     /**
      *
@@ -31,12 +30,11 @@ public class UsersDao {
     @SuppressWarnings("empty-statement")
     public static ArrayList<Users> findAll() throws SQLException {
         ArrayList<Users> users = new ArrayList<>();
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
-            String sql = "select * from users";
+            String sql = "select * from `users`";
             ResultSet resulSet = statement.executeQuery(sql);
             while (resulSet.next()) {
                 Users ur = Users.getFromResultSet(resulSet);
@@ -44,65 +42,56 @@ public class UsersDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
+        }
         return users;
     }
     
-    public static ArrayList<Users> findUserLogin(String username) throws SQLException {
-        ArrayList<Users> ListUsers = new ArrayList<Users>();
-        java.sql.Connection connection = null;
+    public static Users findUserLogin(String username, String password) throws SQLException {
+        Users user = new Users();
+        Connection connection = Database.getInstance().getConnection();
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
+            statement = connection.createStatement();
+            String sql = "select * from users where user_name = '" + username + "' AND password = '" + password +"'";
+            ResultSet resulSet = statement.executeQuery(sql);
+            if (resulSet.next()) {
+                user = user.getFromResultSet(resulSet);
+                return user;
+            }
+            resulSet.close();
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
+    public static Users getUser(String username) throws SQLException {
+        Users user = new Users();
+        Connection connection = Database.getInstance().getConnection();
+        Statement statement = null;
+        try {
             statement = connection.createStatement();
             String sql = "select * from users where user_name = '" + username + "'";
             ResultSet resulSet = statement.executeQuery(sql);
-            while (resulSet.next()) {
-                Users u = Users.getFromResultSet(resulSet);
-                ListUsers.add(u);
+            if (resulSet.next()) {
+                user = user.getFromResultSet(resulSet);
+                return user;
             }
+            resulSet.close();
+            
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
-        return ListUsers;
+        }
+        return null;
     }
+    
     @SuppressWarnings("empty-statement")
     public static ArrayList<Users> findStaff() throws SQLException {
         ArrayList<Users> users = new ArrayList<>();
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
             String sql = "select * from users where role = 'Nhân viên'";
             ResultSet resulSet = statement.executeQuery(sql);
@@ -112,32 +101,16 @@ public class UsersDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
+        }
         return users;
     }
     
     @SuppressWarnings("empty-statement")
     public static int countUserBy(String str) throws SQLException {
         int count = 0;
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
             String sql = "SELECT COUNT(item_code) as count_item FROM goods JOIN typeofgoods ON goods.type_code = typeofgoods.type_code WHERE typeofgoods.type_name = '" + str + "';";
             ResultSet resulSet = statement.executeQuery(sql);
@@ -147,32 +120,16 @@ public class UsersDao {
             System.out.println("Connected!");
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
+        }
         return count;
     }
     
     @SuppressWarnings("empty-statement")
     public static int countStaff() throws SQLException {
         int count = 0;
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
             String sql = "SELECT COUNT(user_name) as count_staff from users WHERE role = 'Nhân viên'";
             ResultSet resulSet = statement.executeQuery(sql);
@@ -182,30 +139,14 @@ public class UsersDao {
             System.out.println("Connected!");
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
+        }
         return count;
     }
     
     public static void updateStatus(Users us) {
-        java.sql.Connection connection = null;
         PreparedStatement statement = null;
+        Connection connection = Database.getInstance().getConnection();
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             String sql = "update users set status = ? where user_name = ?";
             statement = connection.prepareCall(sql);
 
@@ -216,31 +157,15 @@ public class UsersDao {
             System.out.println("Updated status!");
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
         }
     }
     
     @SuppressWarnings("empty-statement")
     public static Users findStaffByUsername(String username) throws SQLException {
         Users user = new Users();
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
             String sql = "select * from users where role = 'Nhân viên' and user_name = '" + username + "'";
             ResultSet resulSet = statement.executeQuery(sql);
@@ -249,31 +174,15 @@ public class UsersDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
+        }
         return user;
     }
     
     
     public static void deleteStaff(Users us) {
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         PreparedStatement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             String sql = "DELETE FROM `users` WHERE `users`.`user_name` = ?";
             statement = connection.prepareCall(sql);
 
@@ -283,31 +192,15 @@ public class UsersDao {
             System.out.println("Deleted!");
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
         }
     }
     
     @SuppressWarnings("empty-statement")
     public static ArrayList<Users> searchStaff(String str) throws SQLException {
         ArrayList<Users> users = new ArrayList<>();
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
             String sql = "SELECT * FROM users WHERE role = 'Nhân viên' and (id_user LIKE '%" + str + "%' or user_name LIKE '%" + str + "%' or full_name LIKE '%" + str + "%' or gender LIKE '%" + str + "%' or birthday LIKE '%" + str + "%' or start_date LIKE '%" + str + "%' or address LIKE '%" + str + "%' or phone_number LIKE '%" + str + "%' or email LIKE '%" + str + "%' or basic_salary LIKE '%" + str + "%' or allowance LIKE '%" + str + "%' or status LIKE '%" + str + "%')";
             ResultSet resulSet = statement.executeQuery(sql);
@@ -317,32 +210,16 @@ public class UsersDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
+        }
         return users;
     }
     
     @SuppressWarnings("empty-statement")
     public static int countStaffSearch(String str) throws SQLException {
         int count = 0;
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
             String sql = "SELECT COUNT(user_name) as count_staff from users WHERE role = 'Nhân viên' and (id_user LIKE '%" + str + "%' or user_name LIKE '%" + str + "%' or full_name LIKE '%" + str + "%' or gender LIKE '%" + str + "%' or birthday LIKE '%" + str + "%' or start_date LIKE '%" + str + "%' or address LIKE '%" + str + "%' or phone_number LIKE '%" + str + "%' or email LIKE '%" + str + "%' or basic_salary LIKE '%" + str + "%' or allowance LIKE '%" + str + "%' or status LIKE '%" + str + "%')";
             ResultSet resulSet = statement.executeQuery(sql);
@@ -352,30 +229,14 @@ public class UsersDao {
             System.out.println("Connected!");
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
+        } 
         return count;
     }
     
     public static void insertStaff(Users us) {
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         PreparedStatement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             String sql = "INSERT INTO `users` VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
             statement = connection.prepareCall(sql);
 
@@ -403,31 +264,15 @@ public class UsersDao {
             System.out.println("Insert successful!");
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
         }
     }
     
     @SuppressWarnings("empty-statement")
     public static ArrayList<Users> findStaffBy(String id, String username, String phonenumber, String email) throws SQLException {
         ArrayList<Users> users = new ArrayList<Users>();
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
             String sql = "SELECT * FROM users WHERE role = 'Nhân viên' and (id_user = '" + id + "' or user_name = '" + username + "' or  phone_number = '" + phonenumber + "' or email = '" + email + "')";
             ResultSet resulSet = statement.executeQuery(sql);
@@ -437,32 +282,16 @@ public class UsersDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
+        }
         return users;
     }
     
     @SuppressWarnings("empty-statement")
     public static ArrayList<Users> checkEmail(String email) throws SQLException {
         ArrayList<Users> users = new ArrayList<Users>();
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         Statement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
             String sql = "SELECT * FROM users WHERE role = 'Nhân viên' and email = '" + email + "'";
             ResultSet resulSet = statement.executeQuery(sql);
@@ -472,30 +301,15 @@ public class UsersDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
+        }
         return users;
     }
     
     public static void updateStaff(Users us) {
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         PreparedStatement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
+            
             String sql = "update users set full_name = ?, gender = ?, birthday = ?, start_date = ?, address = ?, basic_salary = ?, allowance = ?, image_user = ? where user_name = ?;";
             statement = connection.prepareCall(sql);
 
@@ -517,30 +331,14 @@ public class UsersDao {
             System.out.println("Insert successful!");
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
         }
     }
     @SuppressWarnings("empty-statement")
     public static Users findStaffById(String id) throws SQLException {
         Users user = new Users();
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         Statement statement = null;
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
+        try {      
             statement = connection.createStatement();
             String sql = "SELECT * FROM users WHERE role = 'Nhân viên' and id_user = '" + id + "'";
             ResultSet resulSet = statement.executeQuery(sql);
@@ -550,30 +348,14 @@ public class UsersDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
+        }
         return user;
     }
     
     public static void chancePassword(String username, String password) {
-        java.sql.Connection connection = null;
+        Connection connection = Database.getInstance().getConnection();
         PreparedStatement statement = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             String sql = "update users set password = ? where user_name = ?";
             statement = connection.prepareCall(sql);
 
@@ -584,21 +366,6 @@ public class UsersDao {
             System.out.println("Chance password successful!");
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
         }
     }
     

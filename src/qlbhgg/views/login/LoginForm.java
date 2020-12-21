@@ -5,16 +5,13 @@
  */
 package qlbhgg.views.login;
 
-import qlbhgg.views.admin.AdminForm;
 import java.awt.event.KeyEvent;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import qlbhgg.models.Users;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import qlbhgg.controller.LoginController.LoginController;
+import qlbhgg.views.admin.AdminForm;
 import qlbhgg.views.staff.StaffForm;
 
 /**
@@ -48,65 +45,29 @@ public class LoginForm extends javax.swing.JFrame {
         lbWrongUsername.setText("");
         jErrorIcon1.setVisible(false);
         jErrorIcon2.setVisible(false);
-        String userName = txtUsername.getText();
-        String passWord = String.valueOf(jPasswordField.getPassword());
-        String Sql = "select * from users where user_name = '" + userName + "'";
-
-        if ("".equals(userName) || "".equals(passWord)) {
-            lbWrongPass.setText("Bạn chưa điền đủ thông tin đăng nhập!");
-        } else {
-            try {
-                Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
-                Statement myStmt = myConn.createStatement();
-                ResultSet myRs = myStmt.executeQuery(Sql);
-                if (myRs.next()) {
-                    Users user = Users.getFromResultSet(myRs);
-                    if (txtUsername.getText().equals(user.getUsername())) {
-                        if (user.checkPassword(String.valueOf(jPasswordField.getPassword()))) {
-                            if (user.getStatus().equals("Khóa")) {
-                                lbWrongPass.setText("Tài khoản của bạn đã bị khóa");
-                            } else {
-                                try {
-                                        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                                            if ("Windows".equals(info.getName())) {
-                                                javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                                                break;
-                                            }
-                                        }
-                                    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-                                        java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-                                    }
-                                if ("Quản lý".equals(user.getRole())) {
-                                    AdminForm af = new AdminForm(user);
-                                    af.setVisible(true);
-                                    af.pack();
-                                    af.setLocationRelativeTo(null);
-
-                                } else {
-                                    StaffForm sf = new StaffForm(user);
-                                    sf.setVisible(true);
-                                    sf.pack();
-                                    sf.setLocationRelativeTo(null);
-                                }
-                                this.dispose();
-                            }
-                        } else {
-                            lbWrongPass.setText("Mật khẩu không chính xác.");
-                            lbQuenMK.setText("Quên mật khẩu?");
-                            lbQuenMK.setEnabled(true);
-                            jErrorIcon2.setVisible(true);
-                        }
-                    }
-                } else {
-                    lbWrongUsername.setText("Tài khoản không tồn tại.");
-                    jErrorIcon1.setVisible(true);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
+        
+        LoginController loginController = new LoginController(this);
+        Users userLogin = loginController.login();
+        if(userLogin != null) {
+            if(userLogin.getRole().equals("Quản lý")) {
+                AdminForm af = new AdminForm(userLogin);
+                af.setVisible(true);
+            } else if (userLogin.getRole().equals("Nhân viên")) {
+                StaffForm sf = new StaffForm(userLogin);
+                sf.setVisible(true);
             }
+            this.dispose();
+        } else {
+            
         }
     }
 
+    public Users getUser() {
+        Users user = new Users();
+        user.setUsername(txtUsername.getText());
+        user.setPassword(String.valueOf(jPasswordField.getPassword()));
+        return user;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -7,8 +7,6 @@ package qlbhgg.views.admin.staff;
 
 import java.awt.Color;
 import java.awt.Image;
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -16,12 +14,10 @@ import java.util.GregorianCalendar;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import static qlbhgg.dao.UsersDao.countStaff;
 import qlbhgg.dao.WorkDayDao;
 import qlbhgg.models.Users;
 import qlbhgg.models.WorkDay;
 import qlbhgg.views.common.ConfirmDeleteStaff;
-import qlbhgg.views.common.ChancePassword;
 import qlbhgg.views.common.ConfirmOperations;
 
 /**
