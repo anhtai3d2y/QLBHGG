@@ -59,10 +59,10 @@ public class PanelStatistical extends javax.swing.JPanel {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 207, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        jDashboardTK.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 290, -1, -1));
+        jDashboardTK.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 280, -1, 300));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -74,10 +74,10 @@ public class PanelStatistical extends javax.swing.JPanel {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 207, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        jDashboardTK.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 420, -1));
+        jDashboardTK.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 420, 300));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -89,10 +89,10 @@ public class PanelStatistical extends javax.swing.JPanel {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 207, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        jDashboardTK.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 430, -1));
+        jDashboardTK.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 430, 300));
 
         jPanel4.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -104,10 +104,10 @@ public class PanelStatistical extends javax.swing.JPanel {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 90, Short.MAX_VALUE)
+            .addGap(0, 120, Short.MAX_VALUE)
         );
 
-        jDashboardTK.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 210, 90));
+        jDashboardTK.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 210, 120));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -119,10 +119,10 @@ public class PanelStatistical extends javax.swing.JPanel {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 207, Short.MAX_VALUE)
+            .addGap(0, 250, Short.MAX_VALUE)
         );
 
-        jDashboardTK.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 430, -1));
+        jDashboardTK.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 17, 430, 250));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -134,10 +134,10 @@ public class PanelStatistical extends javax.swing.JPanel {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 207, Short.MAX_VALUE)
+            .addGap(0, 250, Short.MAX_VALUE)
         );
 
-        jDashboardTK.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 70, -1, -1));
+        jDashboardTK.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 17, -1, 250));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -149,10 +149,10 @@ public class PanelStatistical extends javax.swing.JPanel {
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 90, Short.MAX_VALUE)
+            .addGap(0, 120, Short.MAX_VALUE)
         );
 
-        jDashboardTK.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 200, 90));
+        jDashboardTK.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 120));
 
         jPanel8.setBackground(new java.awt.Color(126, 157, 177));
 
@@ -164,10 +164,10 @@ public class PanelStatistical extends javax.swing.JPanel {
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 110, Short.MAX_VALUE)
+            .addGap(0, 130, Short.MAX_VALUE)
         );
 
-        jDashboardTK.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 200, 110));
+        jDashboardTK.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 200, 130));
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -179,10 +179,10 @@ public class PanelStatistical extends javax.swing.JPanel {
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 110, Short.MAX_VALUE)
+            .addGap(0, 130, Short.MAX_VALUE)
         );
 
-        jDashboardTK.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 210, 110));
+        jDashboardTK.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 210, 130));
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -194,10 +194,10 @@ public class PanelStatistical extends javax.swing.JPanel {
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 207, Short.MAX_VALUE)
+            .addGap(0, 260, Short.MAX_VALUE)
         );
 
-        jDashboardTK.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 420, -1));
+        jDashboardTK.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 597, 420, 260));
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -209,10 +209,10 @@ public class PanelStatistical extends javax.swing.JPanel {
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 207, Short.MAX_VALUE)
+            .addGap(0, 260, Short.MAX_VALUE)
         );
 
-        jDashboardTK.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 510, 430, -1));
+        jDashboardTK.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 597, 430, 260));
 
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -224,10 +224,10 @@ public class PanelStatistical extends javax.swing.JPanel {
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 207, Short.MAX_VALUE)
+            .addGap(0, 260, Short.MAX_VALUE)
         );
 
-        jDashboardTK.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 510, -1, -1));
+        jDashboardTK.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 597, -1, 260));
 
         add(jDashboardTK, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents

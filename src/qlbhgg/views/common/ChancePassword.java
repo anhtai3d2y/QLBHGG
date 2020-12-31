@@ -113,7 +113,7 @@ public class ChancePassword extends javax.swing.JFrame {
         jLabelTitle.setBackground(new java.awt.Color(0, 0, 0));
         jLabelTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_gear_25px.png"))); // NOI18N
+        jLabelTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/qlbhgg/Icon/icons8_overwolf_25px.png"))); // NOI18N
         jLabelTitle.setText("Đổi mật khẩu");
 
         javax.swing.GroupLayout jPanelTitleLayout = new javax.swing.GroupLayout(jPanelTitle);
@@ -289,17 +289,17 @@ public class ChancePassword extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseClicked
-        // TODO add your handling code here:
+        
         this.dispose();
     }//GEN-LAST:event_lbExitMouseClicked
 
     private void lbExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseEntered
-        // TODO add your handling code here:
+        
         lbExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_3.png")));
     }//GEN-LAST:event_lbExitMouseEntered
 
     private void lbExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseExited
-        // TODO add your handling code here:
+        
         lbExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_4.png")));
     }//GEN-LAST:event_lbExitMouseExited
 
@@ -374,7 +374,7 @@ public class ChancePassword extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSendcodeMouseExited
 
     private void jButtonSendcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSendcodeActionPerformed
-        pincode = qlbhgg.controller.MailController.MailHandle.SendPincode(user.getEmail(), "Đổi mật khẩu đăng nhập KMA-Gear");
+        pincode = qlbhgg.controller.mailhandle.MailHandle.SendPincode(user.getEmail(), "Đổi mật khẩu đăng nhập KMA-Gear");
     }//GEN-LAST:event_jButtonSendcodeActionPerformed
 
     /**

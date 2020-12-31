@@ -41,9 +41,11 @@ public class PanelCustomer extends javax.swing.JPanel {
     public void showTableCustomer() {
         jLabelFrameSearchCustomer.setIcon(scaleFrameSearch("/Image/FrameSearch.png"));
         DefaultTableModel tblModel = (DefaultTableModel) jTableCustomer.getModel();
+        int stt = 1;
         for (Customers c : ListCustomers) {
-            String row[] = {c.getCustomercode(), c.getCustomername(), c.getTradingname(), c.getAddress(), c.getEmail(), c.getPhonenumber()};
+            String row[] = {String.valueOf(stt),c.getCustomercode(), c.getCustomername(), c.getTradingname(), c.getAddress(), c.getEmail(), c.getPhonenumber()};
             tblModel.addRow(row);
+            stt++;
         }
     }
     private ImageIcon scaleFrameSearch(String path) {
@@ -88,15 +90,19 @@ public class PanelCustomer extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Mã khách hàng", "Tên khách hàng", "Giao dịch", "Địa chỉ", "Email", "Số điện thoại"
+                "STT", "Mã khách hàng", "Tên khách hàng", "Giao dịch", "Địa chỉ", "Email", "Số điện thoại"
             }
         ));
+        jTableCustomer.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         jTableCustomer.setFocusable(false);
         jTableCustomer.setRowHeight(25);
         jTableCustomer.setSelectionBackground(new java.awt.Color(215, 220, 222));
         jTableCustomer.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jTableCustomer.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTableCustomer);
+        if (jTableCustomer.getColumnModel().getColumnCount() > 0) {
+            jTableCustomer.getColumnModel().getColumn(0).setPreferredWidth(30);
+        }
 
         jDashboardTTKH.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1330, 790));
 

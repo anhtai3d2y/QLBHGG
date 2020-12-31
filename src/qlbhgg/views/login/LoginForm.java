@@ -5,13 +5,16 @@
  */
 package qlbhgg.views.login;
 
+import qlbhgg.views.admin.AdminForm;
 import java.awt.event.KeyEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import qlbhgg.models.Users;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import qlbhgg.controller.LoginController.LoginController;
-import qlbhgg.views.admin.AdminForm;
 import qlbhgg.views.staff.StaffForm;
 
 /**
@@ -32,8 +35,6 @@ public class LoginForm extends javax.swing.JFrame {
 
     public LoginForm() {
         initComponents();
-//        jLabelMK.setVisible(true);
-//        jLabelTK.setVisible(true);
         jErrorIcon1.setVisible(false);
         jErrorIcon2.setVisible(false);
         jClearPassword.setVisible(false);
@@ -45,29 +46,65 @@ public class LoginForm extends javax.swing.JFrame {
         lbWrongUsername.setText("");
         jErrorIcon1.setVisible(false);
         jErrorIcon2.setVisible(false);
-        
-        LoginController loginController = new LoginController(this);
-        Users userLogin = loginController.login();
-        if(userLogin != null) {
-            if(userLogin.getRole().equals("Quản lý")) {
-                AdminForm af = new AdminForm(userLogin);
-                af.setVisible(true);
-            } else if (userLogin.getRole().equals("Nhân viên")) {
-                StaffForm sf = new StaffForm(userLogin);
-                sf.setVisible(true);
-            }
-            this.dispose();
+        String userName = txtUsername.getText();
+        String passWord = String.valueOf(jPasswordField.getPassword());
+        String Sql = "select * from users where user_name = '" + userName + "'";
+
+        if ("".equals(userName) || "".equals(passWord)) {
+            lbWrongPass.setText("Bạn chưa điền đủ thông tin đăng nhập!");
         } else {
-            
+            try {
+                Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
+                Statement myStmt = myConn.createStatement();
+                ResultSet myRs = myStmt.executeQuery(Sql);
+                if (myRs.next()) {
+                    Users user = Users.getFromResultSet(myRs);
+                    if (txtUsername.getText().equals(user.getUsername())) {
+                        if (user.checkPassword(String.valueOf(jPasswordField.getPassword()))) {
+                            if (user.getStatus().equals("Khóa")) {
+                                lbWrongPass.setText("Tài khoản của bạn đã bị khóa");
+                            } else {
+                                try {
+                                        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                                            if ("Windows".equals(info.getName())) {
+                                                javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                                                break;
+                                            }
+                                        }
+                                    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+                                        java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                                    }
+                                if ("Quản lý".equals(user.getRole())) {
+                                    AdminForm af = new AdminForm(user);
+                                    af.setVisible(true);
+                                    af.pack();
+                                    af.setLocationRelativeTo(null);
+
+                                } else {
+                                    StaffForm sf = new StaffForm(user);
+                                    sf.setVisible(true);
+                                    sf.pack();
+                                    sf.setLocationRelativeTo(null);
+                                }
+                                this.dispose();
+                            }
+                        } else {
+                            lbWrongPass.setText("Mật khẩu không chính xác.");
+                            lbQuenMK.setText("Quên mật khẩu?");
+                            lbQuenMK.setEnabled(true);
+                            jErrorIcon2.setVisible(true);
+                        }
+                    }
+                } else {
+                    lbWrongUsername.setText("Tài khoản không tồn tại.");
+                    jErrorIcon1.setVisible(true);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public Users getUser() {
-        Users user = new Users();
-        user.setUsername(txtUsername.getText());
-        user.setPassword(String.valueOf(jPasswordField.getPassword()));
-        return user;
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -334,7 +371,7 @@ public class LoginForm extends javax.swing.JFrame {
         lbDangNhap.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lbDangNhap.setForeground(new java.awt.Color(255, 255, 255));
         lbDangNhap.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_gear_125px.png"))); // NOI18N
+        lbDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/qlbhgg/Icon/icons8_overwolf_125px_1.png"))); // NOI18N
         jPanelLogin.add(lbDangNhap);
         lbDangNhap.setBounds(140, 30, 110, 110);
 
@@ -456,92 +493,75 @@ public class LoginForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseClicked
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_lbExitMouseClicked
 
     private void lbDiscordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDiscordMouseEntered
-        // TODO add your handling code here:
         lbDiscord.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_discord_100px_1.png")));
     }//GEN-LAST:event_lbDiscordMouseEntered
 
     private void lbDiscordMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDiscordMouseExited
-        // TODO add your handling code here:
         lbDiscord.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_discord_100px.png")));
     }//GEN-LAST:event_lbDiscordMouseExited
 
     private void lbExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseEntered
-        // TODO add your handling code here:
         lbExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_3.png")));
     }//GEN-LAST:event_lbExitMouseEntered
 
     private void lbExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseExited
-        // TODO add your handling code here:
         lbExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_2.png")));
     }//GEN-LAST:event_lbExitMouseExited
 
     private void lbTwitchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTwitchMouseEntered
-        // TODO add your handling code here:
         lbTwitch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_twitch_100px_1.png")));
     }//GEN-LAST:event_lbTwitchMouseEntered
 
     private void lbTwitchMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTwitchMouseExited
-        // TODO add your handling code here:
         lbTwitch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_twitch_100px.png")));
     }//GEN-LAST:event_lbTwitchMouseExited
 
     private void lbControllerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbControllerMouseEntered
-        // TODO add your handling code here:
         lbController.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_game_controller_100px_1.png")));
     }//GEN-LAST:event_lbControllerMouseEntered
 
     private void lbControllerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbControllerMouseExited
-        // TODO add your handling code here:
         lbController.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_game_controller_100px_2.png")));
     }//GEN-LAST:event_lbControllerMouseExited
 
     private void lbDellMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDellMouseEntered
-        // TODO add your handling code here:
         lbDell.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_dell_100px_1.png")));
     }//GEN-LAST:event_lbDellMouseEntered
 
     private void lbDellMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDellMouseExited
-        // TODO add your handling code here:
         lbDell.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_dell_100px_2.png")));
     }//GEN-LAST:event_lbDellMouseExited
 
     private void lbGarenaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbGarenaMouseEntered
-        // TODO add your handling code here:
         lbGarena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_garena_100px_1.png")));
     }//GEN-LAST:event_lbGarenaMouseEntered
 
     private void lbGarenaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbGarenaMouseExited
-        // TODO add your handling code here:
         lbGarena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_garena_100px_2.png")));
     }//GEN-LAST:event_lbGarenaMouseExited
 
     private void lbCorsairMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCorsairMouseEntered
-        // TODO add your handling code here:
         lbCorsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_corsair_100px_3.png")));
     }//GEN-LAST:event_lbCorsairMouseEntered
 
     private void lbCorsairMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCorsairMouseExited
-        // TODO add your handling code here:
         lbCorsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_corsair_100px_2.png")));
     }//GEN-LAST:event_lbCorsairMouseExited
 
     private void lbLogitechMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbLogitechMouseEntered
-        // TODO add your handling code here:
         lbLogitech.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_logitech_100px_1.png")));
     }//GEN-LAST:event_lbLogitechMouseEntered
 
     private void lbLogitechMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbLogitechMouseExited
-        // TODO add your handling code here:
         lbLogitech.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_logitech_100px_2.png")));
     }//GEN-LAST:event_lbLogitechMouseExited
 
     private void btnSignMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSignMouseEntered
-        // TODO add your handling code here:
+        
         btnSign.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagePng/SignButtonWhite.png")));
         lbLogitech.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_logitech_100px_1.png")));
         lbCorsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_corsair_100px_3.png")));
@@ -554,7 +574,7 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSignMouseEntered
 
     private void btnSignMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSignMouseExited
-        // TODO add your handling code here:
+        
         btnSign.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagePng/SignButtonGreen.png")));
         lbLogitech.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_logitech_100px_2.png")));
         lbCorsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_corsair_100px_2.png")));
@@ -569,7 +589,6 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void btnSignMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSignMouseClicked
         try {
-            // TODO add your handling code here:
             Signin();
         } catch (SQLException ex) {
             Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
@@ -577,27 +596,22 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSignMouseClicked
 
     private void btnMinimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseEntered
-        // TODO add your handling code here:
         btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_minimize_window_25px_1.png")));
     }//GEN-LAST:event_btnMinimizeMouseEntered
 
     private void btnMinimizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseExited
-        // TODO add your handling code here:
         btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_minimize_window_25px.png")));
     }//GEN-LAST:event_btnMinimizeMouseExited
 
     private void lbQuenMKMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbQuenMKMouseEntered
-        // TODO add your handling code here:
         lbQuenMK.setForeground(new java.awt.Color(255, 0, 0));
     }//GEN-LAST:event_lbQuenMKMouseEntered
 
     private void lbQuenMKMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbQuenMKMouseExited
-        // TODO add your handling code here:
         lbQuenMK.setForeground(new java.awt.Color(255, 102, 102));
     }//GEN-LAST:event_lbQuenMKMouseExited
 
     private void txtUsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyPressed
-//        // TODO add your handling code here:
         if (!txtUsername.getText().equals("")) {
             jClearUsername.setVisible(true);
         } else {
@@ -614,7 +628,6 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsernameKeyPressed
 
     private void jPasswordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldKeyPressed
-//        // TODO add your handling code here:
 
         jLabelMK.setVisible(false);
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -633,56 +646,56 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsernameFocusLost
 
     private void jPasswordFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordFieldFocusLost
-        // TODO add your handling code here:
+        
         if (String.valueOf(jPasswordField.getPassword()).equals("")) {
             jLabelMK.setVisible(true);
         }
     }//GEN-LAST:event_jPasswordFieldFocusLost
 
     private void jClearUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jClearUsernameMouseClicked
-        // TODO add your handling code here:
+        
         txtUsername.setText("");
         jClearUsername.setVisible(false);
         jLabelTK.setVisible(true);
     }//GEN-LAST:event_jClearUsernameMouseClicked
 
     private void jClearPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jClearPasswordMouseClicked
-        // TODO add your handling code here:
+        
         jPasswordField.setText("");
         jClearPassword.setVisible(false);
         jLabelMK.setVisible(true);
     }//GEN-LAST:event_jClearPasswordMouseClicked
 
     private void pnBackgroundMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnBackgroundMouseDragged
-        // TODO add your handling code here:
+        
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - XX, y - YY);
     }//GEN-LAST:event_pnBackgroundMouseDragged
 
     private void pnBackgroundMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnBackgroundMousePressed
-        // TODO add your handling code here:
+        
         XX = evt.getX();
         YY = evt.getY();
     }//GEN-LAST:event_pnBackgroundMousePressed
 
     private void lbRazerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbRazerMouseExited
-        // TODO add your handling code here:
+        
         lbRazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_razer_100px.png")));
     }//GEN-LAST:event_lbRazerMouseExited
 
     private void lbRazerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbRazerMouseEntered
-        // TODO add your handling code here:
+        
         lbRazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_razer_100px_1.png")));
     }//GEN-LAST:event_lbRazerMouseEntered
 
     private void btnMinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseClicked
-        // TODO add your handling code here:
+        
         this.setExtendedState(LoginForm.ICONIFIED);
     }//GEN-LAST:event_btnMinimizeMouseClicked
 
     private void txtUsernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyReleased
-        // TODO add your handling code here:
+        
         if (!txtUsername.getText().equals("")) {
             jClearUsername.setVisible(true);
         } else {
@@ -692,7 +705,7 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsernameKeyReleased
 
     private void jPasswordFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldKeyReleased
-        // TODO add your handling code here:
+        
         if (!String.valueOf(jPasswordField.getPassword()).equals("")) {
             jClearPassword.setVisible(true);
         } else {

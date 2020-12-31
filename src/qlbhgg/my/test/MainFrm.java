@@ -140,6 +140,7 @@ public class MainFrm extends javax.swing.JFrame {
         plot.getRenderer().setSeriesPaint(0, Color.BLUE);
         // create chart panel the add it to swing panel in  jframe
         ChartPanel chartPanel = new ChartPanel(lineChart);
+        chartPanel.setBackground(new java.awt.Color(255,255,255));
         pnChart.removeAll();    // clear panel before add new chart
         pnChart.add(chartPanel, BorderLayout.CENTER);
         pnChart.validate();       // refresh panel to display new chart

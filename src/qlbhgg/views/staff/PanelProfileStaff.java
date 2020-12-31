@@ -508,7 +508,7 @@ public class PanelProfileStaff extends javax.swing.JPanel {
         jSeparator4.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jDashboardProfile.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, 10, 700));
+        jDashboardProfile.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, 10, 790));
 
         jLabelPreviousYear.setBackground(new java.awt.Color(255, 255, 255));
         jLabelPreviousYear.setForeground(new java.awt.Color(0, 0, 0));
@@ -1064,11 +1064,9 @@ public class PanelProfileStaff extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1342, Short.MAX_VALUE)
+            .addGap(0, 1330, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(jDashboardProfile, javax.swing.GroupLayout.DEFAULT_SIZE, 1330, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addComponent(jDashboardProfile, javax.swing.GroupLayout.DEFAULT_SIZE, 1330, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1085,22 +1083,22 @@ public class PanelProfileStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelButtonEditStaffMouseClicked
 
     private void jLabelButtonEditStaffMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonEditStaffMouseEntered
-        // TODO add your handling code here:
+        
         jLabelBBButtonEditStaff.setIcon(scaleButtonEdit("/Image/ButtonEditDark.png"));
     }//GEN-LAST:event_jLabelButtonEditStaffMouseEntered
 
     private void jLabelButtonEditStaffMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonEditStaffMouseExited
-        // TODO add your handling code here:
+        
         jLabelBBButtonEditStaff.setIcon(scaleButtonEdit("/Image/ButtonEditLight.png"));
     }//GEN-LAST:event_jLabelButtonEditStaffMouseExited
 
     private void jLabelFrameAvatarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelFrameAvatarMouseClicked
-        // TODO add your handling code here:
+        
         popUpImageStaff(userLogin);
     }//GEN-LAST:event_jLabelFrameAvatarMouseClicked
 
     private void jLabelPreviousYearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousYearMouseClicked
-        // TODO add your handling code here:
+        
         selectedYear--;
         try {
             showCalendar();
@@ -1111,17 +1109,17 @@ public class PanelProfileStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelPreviousYearMouseClicked
 
     private void jLabelPreviousYearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousYearMouseEntered
-        // TODO add your handling code here:
+        
         jLabelPreviousYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_down_40px_1.png")));
     }//GEN-LAST:event_jLabelPreviousYearMouseEntered
 
     private void jLabelPreviousYearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousYearMouseExited
-        // TODO add your handling code here:
+        
         jLabelPreviousYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_down_40px.png")));
     }//GEN-LAST:event_jLabelPreviousYearMouseExited
 
     private void jLabelNextYearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextYearMouseClicked
-        // TODO add your handling code here:
+        
         selectedYear++;
         try {
             showCalendar();
@@ -1132,17 +1130,17 @@ public class PanelProfileStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelNextYearMouseClicked
 
     private void jLabelNextYearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextYearMouseEntered
-        // TODO add your handling code here:
+        
         jLabelNextYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_up_40px_1.png")));
     }//GEN-LAST:event_jLabelNextYearMouseEntered
 
     private void jLabelNextYearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextYearMouseExited
-        // TODO add your handling code here:
+        
         jLabelNextYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_up_40px.png")));
     }//GEN-LAST:event_jLabelNextYearMouseExited
 
     private void jLabelPreviousMonthMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousMonthMouseClicked
-        // TODO add your handling code here:
+        
         if (selectedMonth == 0) {
             selectedMonth = 11;
             selectedYear--;
@@ -1158,17 +1156,17 @@ public class PanelProfileStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelPreviousMonthMouseClicked
 
     private void jLabelPreviousMonthMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousMonthMouseEntered
-        // TODO add your handling code here:
+        
         jLabelPreviousMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_left_40px_1.png")));
     }//GEN-LAST:event_jLabelPreviousMonthMouseEntered
 
     private void jLabelPreviousMonthMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousMonthMouseExited
-        // TODO add your handling code here:
+        
         jLabelPreviousMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_left_40px.png")));
     }//GEN-LAST:event_jLabelPreviousMonthMouseExited
 
     private void jLabelNextMonthMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextMonthMouseClicked
-        // TODO add your handling code here:
+        
         if (selectedMonth == 11) {
             selectedMonth = 0;
             selectedYear++;
@@ -1184,12 +1182,12 @@ public class PanelProfileStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelNextMonthMouseClicked
 
     private void jLabelNextMonthMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextMonthMouseEntered
-        // TODO add your handling code here:
+        
         jLabelNextMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_right_40px_1.png")));
     }//GEN-LAST:event_jLabelNextMonthMouseEntered
 
     private void jLabelNextMonthMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextMonthMouseExited
-        // TODO add your handling code here:
+        
         jLabelNextMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_right_40px.png")));
     }//GEN-LAST:event_jLabelNextMonthMouseExited
 

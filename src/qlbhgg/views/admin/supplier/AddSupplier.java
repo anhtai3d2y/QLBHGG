@@ -5,7 +5,6 @@
  */
 package qlbhgg.views.admin.supplier;
 
-import qlbhgg.views.admin.customer.*;
 
 /**
  *
@@ -189,17 +188,17 @@ public class AddSupplier extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseClicked
-        // TODO add your handling code here:
+        
         System.exit(0);
     }//GEN-LAST:event_lbExitMouseClicked
 
     private void lbExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseEntered
-        // TODO add your handling code here:
+        
         lbExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_3.png")));
     }//GEN-LAST:event_lbExitMouseEntered
 
     private void lbExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseExited
-        // TODO add your handling code here:
+        
         lbExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_2.png")));
     }//GEN-LAST:event_lbExitMouseExited
 

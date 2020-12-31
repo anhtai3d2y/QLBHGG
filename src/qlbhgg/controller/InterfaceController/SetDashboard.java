@@ -151,7 +151,11 @@ public class SetDashboard {
                 }
                 break;
                 case "QLBH":  {
+                try {
                     node = new PanelSale();
+                } catch (SQLException ex) {
+                    Logger.getLogger(SetDashboard.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 }
                 break;
 

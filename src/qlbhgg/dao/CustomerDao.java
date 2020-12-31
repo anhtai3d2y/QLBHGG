@@ -5,12 +5,11 @@
  */
 package qlbhgg.dao;
 
-import java.sql.Connection;
+import qlbhgg.models.Customers;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import qlbhgg.models.Customers;
 
 /**
  *
@@ -18,33 +17,47 @@ import qlbhgg.models.Customers;
  */
 @SuppressWarnings("empty-statement")
 public class CustomerDao {
-
     @SuppressWarnings("empty-statement")
     public static Customers findCustomerById(String id) throws SQLException {
         Customers customer = new Customers();
-        Connection connection = Database.getInstance().getConnection();
+        java.sql.Connection connection = null;
+        java.sql.Statement statement = null;
         try {
-            java.sql.Statement statement = connection.createStatement();
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
             String sql = "select * from customer where customer_code = '" + id + "'";
             ResultSet resulSet = statement.executeQuery(sql);
             while (resulSet.next()) {
                 customer = Customers.getFromResultSet(resulSet);
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    java.util.logging.Logger.getLogger(Customers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    java.util.logging.Logger.getLogger(Customers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                }
+            }
+        };
         return customer;
     }
-
+    
     @SuppressWarnings("empty-statement")
     public static ArrayList<Customers> findAllCustomer() throws SQLException {
         ArrayList<Customers> customers = new ArrayList<>();
-
-        Connection connection = Database.getInstance().getConnection();
+        java.sql.Connection connection = null;
+        java.sql.Statement statement = null;
         try {
-            Statement statement = connection.createStatement();
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
             String sql = "select * from customer";
             ResultSet resulSet = statement.executeQuery(sql);
@@ -54,16 +67,32 @@ public class CustomerDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    java.util.logging.Logger.getLogger(Customers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    java.util.logging.Logger.getLogger(Customers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                }
+            }
+        };
         return customers;
     }
-
+    
     public static ArrayList<Customers> searchCustomer(String str) throws SQLException {
         ArrayList<Customers> customers = new ArrayList<>();
-
-        Connection connection = Database.getInstance().getConnection();
+        java.sql.Connection connection = null;
+        java.sql.Statement statement = null;
         try {
-            Statement statement = connection.createStatement();
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
+            statement = connection.createStatement();
             String sql = "select * from customer where customer_code like '%" + str + "%' or customer_name like '%" + str + "%' or trading_name like '%" + str + "%' or address like '%" + str + "%' or email like '%" + str + "%' or phone_number like '%" + str + "%'";
             ResultSet resulSet = statement.executeQuery(sql);
             while (resulSet.next()) {
@@ -72,14 +101,29 @@ public class CustomerDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    java.util.logging.Logger.getLogger(Customers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    java.util.logging.Logger.getLogger(Customers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                }
+            }
+        };
         return customers;
     }
-
+    
     public static void main(String[] args) throws SQLException {
         ArrayList<Customers> lc = CustomerDao.searchCustomer("build bộ pc");
         for (Customers customers : lc) {
             System.out.println(customers.toString());
         }
-    }
+   }
 }

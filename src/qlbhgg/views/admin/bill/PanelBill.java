@@ -37,6 +37,9 @@ public class PanelBill extends javax.swing.JPanel {
     public PanelBill() throws SQLException {
         initComponents();
         showBillList(ListBills, countBill);
+         for (Bill ListBill : ListBills) {
+            System.out.println(ListBill.toString());
+        }
     }
 
     public void startingStateQLHD() {
@@ -1163,11 +1166,11 @@ public class PanelBill extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldPageBillKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPageBillKeyPressed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldPageBillKeyPressed
 
     private void jTextFieldPageBillKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPageBillKeyReleased
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldPageBillKeyReleased
 
     private void jLabelRightPageBillMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRightPageBillMouseClicked
@@ -1186,12 +1189,12 @@ public class PanelBill extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelRightPageBillMouseClicked
 
     private void jLabelRightPageBillMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRightPageBillMouseEntered
-        // TODO add your handling code here:
+        
         jLabelRightPageBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_right_20px_1.png")));
     }//GEN-LAST:event_jLabelRightPageBillMouseEntered
 
     private void jLabelRightPageBillMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRightPageBillMouseExited
-        // TODO add your handling code here:
+        
         jLabelRightPageBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_right_20px.png")));
     }//GEN-LAST:event_jLabelRightPageBillMouseExited
 
@@ -1207,12 +1210,12 @@ public class PanelBill extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelLeftPageBillMouseClicked
 
     private void jLabelLeftPageBillMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeftPageBillMouseEntered
-        // TODO add your handling code here:
+        
         jLabelLeftPageBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_left_20px.png")));
     }//GEN-LAST:event_jLabelLeftPageBillMouseEntered
 
     private void jLabelLeftPageBillMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeftPageBillMouseExited
-        // TODO add your handling code here:
+        
         jLabelLeftPageBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_left_20px_1.png")));
     }//GEN-LAST:event_jLabelLeftPageBillMouseExited
 
@@ -1230,12 +1233,12 @@ public class PanelBill extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelSkipToEndPageBillMouseClicked
 
     private void jLabelSkipToEndPageBillMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipToEndPageBillMouseEntered
-        // TODO add your handling code here:
+        
         jLabelSkipToEndPageBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_end_20px.png")));
     }//GEN-LAST:event_jLabelSkipToEndPageBillMouseEntered
 
     private void jLabelSkipToEndPageBillMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipToEndPageBillMouseExited
-        // TODO add your handling code here:
+        
         jLabelSkipToEndPageBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_end_20px_1.png")));
     }//GEN-LAST:event_jLabelSkipToEndPageBillMouseExited
 
@@ -1251,12 +1254,12 @@ public class PanelBill extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelSkipToStartPageBillMouseClicked
 
     private void jLabelSkipToStartPageBillMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipToStartPageBillMouseEntered
-        // TODO add your handling code here:
+        
         jLabelSkipToStartPageBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_skip_to_start_20px.png")));
     }//GEN-LAST:event_jLabelSkipToStartPageBillMouseEntered
 
     private void jLabelSkipToStartPageBillMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipToStartPageBillMouseExited
-        // TODO add your handling code here:
+        
         jLabelSkipToStartPageBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_skip_to_start_20px_1.png")));
     }//GEN-LAST:event_jLabelSkipToStartPageBillMouseExited
 

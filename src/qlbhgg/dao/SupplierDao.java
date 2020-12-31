@@ -5,7 +5,6 @@
  */
 package qlbhgg.dao;
 
-import java.sql.Connection;
 import qlbhgg.models.Suppliers;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -23,9 +22,10 @@ public class SupplierDao {
     @SuppressWarnings("empty-statement")
     public static ArrayList<Suppliers> findAllSupplier() throws SQLException {
         ArrayList<Suppliers> ListSupplier = new ArrayList<>();
-        Connection connection = Database.getInstance().getConnection();
+        java.sql.Connection connection = null;
         Statement statement = null;
         try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
             String sql = "select * from supplier";
             ResultSet resulSet = statement.executeQuery(sql);
@@ -35,16 +35,32 @@ public class SupplierDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Suppliers.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Suppliers.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        };
         return ListSupplier;
     }
     
     @SuppressWarnings("empty-statement")
     public static int countSupplier() throws SQLException {
         int count = 0;
-        Connection connection = Database.getInstance().getConnection();
+        java.sql.Connection connection = null;
         Statement statement = null;
         try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
             statement = connection.createStatement();
             String sql = "select count(company_code) as count_supplier from supplier";
             ResultSet resulSet = statement.executeQuery(sql);

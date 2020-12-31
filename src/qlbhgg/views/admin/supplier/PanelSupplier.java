@@ -1044,11 +1044,11 @@ public class PanelSupplier extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldPageSupplierKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPageSupplierKeyPressed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldPageSupplierKeyPressed
 
     private void jTextFieldPageSupplierKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPageSupplierKeyReleased
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldPageSupplierKeyReleased
 
     private void jLabelRightSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRightSupplierMouseClicked
@@ -1134,15 +1134,15 @@ public class PanelSupplier extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelSkipToStartSupplierMouseExited
 
     private void jTextFieldSearchSupplierFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldSearchSupplierFocusGained
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldSearchSupplierFocusGained
 
     private void jTextFieldSearchSupplierFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldSearchSupplierFocusLost
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldSearchSupplierFocusLost
 
     private void jTextFieldSearchSupplierKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldSearchSupplierKeyReleased
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldSearchSupplierKeyReleased
 
 

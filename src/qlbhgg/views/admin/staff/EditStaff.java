@@ -526,6 +526,9 @@ public class EditStaff extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextFieldPincodeKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldPincodeKeyTyped(evt);
+            }
         });
         jPanelBackGround.add(jTextFieldPincode, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 710, 140, 30));
         jPanelBackGround.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 740, 140, 10));
@@ -900,7 +903,7 @@ public class EditStaff extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelButtonAddMouseExited
 
     private void jLabelButtonClearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonClearMouseClicked
-        // TODO add your handling code here:
+        
         if (roleOfForm.equals("Thêm nhân viên")) {
             jLabelAvatarStaff.setIcon(null);
             jTextFieldNameStaff.setText("");
@@ -932,22 +935,22 @@ public class EditStaff extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelButtonClearMouseClicked
 
     private void jLabelButtonClearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonClearMouseEntered
-        // TODO add your handling code here:
+        
         jLabelButtonClear.setIcon(scaleImage("/Image/SignButtonGray.png"));
     }//GEN-LAST:event_jLabelButtonClearMouseEntered
 
     private void jLabelButtonClearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonClearMouseExited
-        // TODO add your handling code here:
+        
         jLabelButtonClear.setIcon(scaleImage("/Image/SignButtonBlue.png"));
     }//GEN-LAST:event_jLabelButtonClearMouseExited
 
     private void jLabelChooseImageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelChooseImageMouseEntered
-        // TODO add your handling code here:
+        
         jLabelChooseImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_camera_25px_1.png")));
     }//GEN-LAST:event_jLabelChooseImageMouseEntered
 
     private void jLabelChooseImageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelChooseImageMouseExited
-        // TODO add your handling code here:
+        
         jLabelChooseImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_camera_25px.png")));
     }//GEN-LAST:event_jLabelChooseImageMouseExited
 
@@ -1028,7 +1031,7 @@ public class EditStaff extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldIdStaffKeyReleased
 
     private void jTextFieldPincodeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPincodeKeyReleased
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldPincodeKeyReleased
 
     private void jPasswordFieldPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldPasswordKeyReleased
@@ -1061,7 +1064,7 @@ public class EditStaff extends javax.swing.JFrame {
                 jLabelErrorEmail.setText("Email đã tồn tại");
                 jLabelErrorEmail.setVisible(true);
             } else {
-                pinCode = qlbhgg.controller.MailController.MailHandle.SendPincode(jTextFieldEmailStaff.getText(), "Mã xác minh đăng lý tài khoản KMA-Gear");
+                pinCode = qlbhgg.controller.mailhandle.MailHandle.SendPincode(jTextFieldEmailStaff.getText(), "Mã xác minh đăng lý tài khoản KMA-Gear");
             }
         } catch (SQLException ex) {
             Logger.getLogger(EditStaff.class.getName()).log(Level.SEVERE, null, ex);
@@ -1070,7 +1073,7 @@ public class EditStaff extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSendPincodeActionPerformed
 
     private void jButtonSendPincodeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSendPincodeMouseEntered
-        // TODO add your handling code here:
+        
         jButtonSendPincode.setBackground(new java.awt.Color(133, 198, 133));
     }//GEN-LAST:event_jButtonSendPincodeMouseEntered
 
@@ -1079,17 +1082,17 @@ public class EditStaff extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSendPincodeMouseExited
 
     private void jLabelExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelExitMouseClicked
-        // TODO add your handling code here:
+        
         this.dispose();
     }//GEN-LAST:event_jLabelExitMouseClicked
 
     private void jLabelExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelExitMouseEntered
-        // TODO add your handling code here:
+        
         jLabelExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_3.png")));
     }//GEN-LAST:event_jLabelExitMouseEntered
 
     private void jLabelExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelExitMouseExited
-        // TODO add your handling code here:
+        
         jLabelExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_4.png")));
     }//GEN-LAST:event_jLabelExitMouseExited
 
@@ -1103,6 +1106,12 @@ public class EditStaff extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x - XX, y - YY);
     }//GEN-LAST:event_jLabelTitleMouseDragged
+
+    private void jTextFieldPincodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPincodeKeyTyped
+        if (!Character.isDigit(evt.getKeyChar())) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextFieldPincodeKeyTyped
 
     /**
      * @param args the command line arguments

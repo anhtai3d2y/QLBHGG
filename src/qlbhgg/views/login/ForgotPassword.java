@@ -10,11 +10,11 @@ import qlbhgg.models.Users;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
-import qlbhgg.controller.MailController.MailHandle;
 
 /**
  *
@@ -25,10 +25,10 @@ public class ForgotPassword extends javax.swing.JFrame {
     /**
      * Creates new form ForgotPassword
      */
+    public ArrayList<Users> ListUser = new ArrayList<Users>();
     public boolean checkButton = true;
     int pincode;
     String username;
-    Users user = null;
 
     public ForgotPassword() {
         initComponents();
@@ -45,26 +45,34 @@ public class ForgotPassword extends javax.swing.JFrame {
         jSeparatorBackPassword.setVisible(false);
     }
 
-    private void enterUsername() throws SQLException {
+    private void enterUsername() {
         if (!jTextFieldUsername.getText().equals("")) {
             if (checkButton) {
-                user = UsersDao.getUser(jTextFieldUsername.getText());
-                if (user == null) {
-                    jLabel2.setForeground(new java.awt.Color(255, 0, 0));
-                    jLabel2.setText("Tài khoản không tồn tại");
-                    jLabel2.setVisible(true);
-                    jButtonSendcode.setVisible(false);
-                } else {
-                    jLabel1.setText("<html>Vui lòng kiểm tra email và nhập mã xác minh:</html>");
-                    jLabel2.setVisible(false);
-                    jButtonSendcode.setVisible(true);
-                    username = jTextFieldUsername.getText();
-                    pincode = MailHandle.SendPincode(user.getEmail(), "Lấy lại mật khẩu đăng nhập KMA-Gear");
-                    
-                    jTextFieldUsername.setText("");
-                    checkButton = false;
-                    jLabelBack.setVisible(true);
-                    System.out.println(pincode);
+                try {
+                    ListUser = UsersDao.findUserLogin(jTextFieldUsername.getText());
+                    for (int i = 0; i < ListUser.size(); i++) {
+                        ListUser.get(i).toString();
+                        
+                    }
+                    if (ListUser.size() == 0) {
+                        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
+                        jLabel2.setText("Tài khoản không tồn tại");
+                        jLabel2.setVisible(true);
+                        jButtonSendcode.setVisible(false);
+                    } else {
+                        jLabel1.setText("<html>Vui lòng kiểm tra email và nhập mã xác minh:</html>");
+                        jLabel2.setVisible(false);
+                        jButtonSendcode.setVisible(true);
+                        username = jTextFieldUsername.getText();
+                        pincode = qlbhgg.controller.mailhandle.MailHandle.SendPincode(ListUser.get(0).getEmail(), "Lấy lại mật khẩu đăng nhập KMA-Gear");
+                        
+                        jTextFieldUsername.setText("");
+                        checkButton = false;
+                        jLabelBack.setVisible(true);
+                        System.out.println(pincode);
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(ForgotPassword.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } else {
                 if (jTextFieldUsername.getText().equals(String.valueOf(pincode))) {
@@ -381,7 +389,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         jLabelTitle.setBackground(new java.awt.Color(0, 0, 0));
         jLabelTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_gear_25px.png"))); // NOI18N
+        jLabelTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/qlbhgg/Icon/icons8_overwolf_25px.png"))); // NOI18N
         jLabelTitle.setText("Quên mật khẩu | Không thể đăng nhập");
 
         javax.swing.GroupLayout jPanelTitleLayout = new javax.swing.GroupLayout(jPanelTitle);
@@ -421,17 +429,14 @@ public class ForgotPassword extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseClicked
-        // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_lbExitMouseClicked
 
     private void lbExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseEntered
-        // TODO add your handling code here:
         lbExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_3.png")));
     }//GEN-LAST:event_lbExitMouseEntered
 
     private void lbExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseExited
-        // TODO add your handling code here:
         lbExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_4.png")));
     }//GEN-LAST:event_lbExitMouseExited
 
@@ -452,11 +457,7 @@ public class ForgotPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSendcodeMouseExited
 
     private void jButtonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOKActionPerformed
-        try {
-            enterUsername();
-        } catch (SQLException ex) {
-            Logger.getLogger(ForgotPassword.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        enterUsername();
     }//GEN-LAST:event_jButtonOKActionPerformed
 
     private void jTextFieldUsernameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldUsernameKeyTyped
@@ -466,7 +467,7 @@ public class ForgotPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldUsernameKeyTyped
 
     private void jButtonSendcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSendcodeActionPerformed
-        pincode = qlbhgg.controller.MailController.MailHandle.SendPincode(user.getEmail(), "Quên mật khẩu đăng nhập KMA-Gear");
+        pincode = qlbhgg.controller.mailhandle.MailHandle.SendPincode(ListUser.get(0).getEmail(), "Quên mật khẩu đăng nhập KMA-Gear");
     }//GEN-LAST:event_jButtonSendcodeActionPerformed
 
     private void jLabelBackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBackMouseEntered
@@ -488,11 +489,7 @@ public class ForgotPassword extends javax.swing.JFrame {
 
     private void jTextFieldUsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldUsernameKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            try {
-                enterUsername();
-            } catch (SQLException ex) {
-                Logger.getLogger(ForgotPassword.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            enterUsername();
         }
     }//GEN-LAST:event_jTextFieldUsernameKeyPressed
 

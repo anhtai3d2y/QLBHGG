@@ -5,7 +5,7 @@
  */
 package qlbhgg.Test;
 
-import qlbhgg.controller.MailController.MailHandle;
+import qlbhgg.controller.mailhandle.MailHandle;
 
 /**
  *

@@ -438,7 +438,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icon/icons8_gear_125px.png"/>
+                  <Image iconType="3" name="/qlbhgg/Icon/icons8_overwolf_125px_1.png"/>
                 </Property>
               </Properties>
               <Constraints>

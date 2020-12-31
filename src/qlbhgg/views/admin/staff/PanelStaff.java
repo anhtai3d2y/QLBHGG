@@ -2810,12 +2810,12 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelEditStaff1MouseEntered
 
     private void jLabelEditStaff1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEditStaff1MouseExited
-        // TODO add your handling code here:
+        
         jLabelEditStaff1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_edit_20px.png")));
     }//GEN-LAST:event_jLabelEditStaff1MouseExited
 
     private void jLabelDeleteStaff1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff1MouseClicked
-        // TODO add your handling code here:
+        
         setPageStaff = (countStaff % 9 == 0) ? 0 : 1;
         jLabelPageStaff.setText("/" + String.valueOf(countStaff / 9 + setPageStaff));
         int pageStaff = (Integer.parseInt(jTextFieldPageStaff.getText()) - 1) * 9;
@@ -2826,12 +2826,12 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelDeleteStaff1MouseClicked
 
     private void jLabelDeleteStaff1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff1MouseEntered
-        // TODO add your handling code here:
+        
         jLabelDeleteStaff1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_trash_20px.png")));
     }//GEN-LAST:event_jLabelDeleteStaff1MouseEntered
 
     private void jLabelDeleteStaff1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff1MouseExited
-        // TODO add your handling code here:
+        
         jLabelDeleteStaff1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_trash_20px_1.png")));
     }//GEN-LAST:event_jLabelDeleteStaff1MouseExited
 
@@ -2846,7 +2846,7 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelStatusStaff1MouseClicked
 
     private void jLabelNameStaff1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff1MouseClicked
-        // TODO add your handling code here:
+        
         jDashboardQLNV.removeAll();
         jLabelNameStaff1.setForeground(new java.awt.Color(0, 0, 0));
         setPageStaff = (countStaff % 9 == 0) ? 0 : 1;
@@ -2865,38 +2865,38 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelNameStaff1MouseClicked
 
     private void jLabelNameStaff1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff1MouseEntered
-        // TODO add your handling code here:
+        
         jLabelNameStaff1.setForeground(new java.awt.Color(0, 142, 255));
     }//GEN-LAST:event_jLabelNameStaff1MouseEntered
 
     private void jLabelNameStaff1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff1MouseExited
-        // TODO add your handling code here:
+        
         jLabelNameStaff1.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_jLabelNameStaff1MouseExited
 
     private void jLabelMessengerStaff1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMessengerStaff1MouseEntered
-        // TODO add your handling code here:
+        
         jLabelMessengerStaff1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_facebook_messenger_20px_2.png")));
         jLabelMessengerStaff1.setForeground(new java.awt.Color(0, 142, 255));
     }//GEN-LAST:event_jLabelMessengerStaff1MouseEntered
 
     private void jLabelMessengerStaff1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMessengerStaff1MouseExited
-        // TODO add your handling code here:
+        
         jLabelMessengerStaff1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_facebook_messenger_20px.png")));
         jLabelMessengerStaff1.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_jLabelMessengerStaff1MouseExited
 
     private void jLabelAvatarClick1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAvatarClick1MouseClicked
-        // TODO add your handling code here:
+        
         popUpImageStaff(0);
     }//GEN-LAST:event_jLabelAvatarClick1MouseClicked
 
     private void jLabelAvatarClick1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAvatarClick1MouseEntered
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jLabelAvatarClick1MouseEntered
 
     private void jLabelDeleteStaff2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff2MouseClicked
-        // TODO add your handling code here:
+        
         setPageStaff = (countStaff % 9 == 0) ? 0 : 1;
         jLabelPageStaff.setText("/" + String.valueOf(countStaff / 9 + setPageStaff));
         int pageStaff = (Integer.parseInt(jTextFieldPageStaff.getText()) - 1) * 9;
@@ -2907,12 +2907,12 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelDeleteStaff2MouseClicked
 
     private void jLabelDeleteStaff2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff2MouseEntered
-        // TODO add your handling code here:
+        
         jLabelDeleteStaff2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_trash_20px.png")));
     }//GEN-LAST:event_jLabelDeleteStaff2MouseEntered
 
     private void jLabelDeleteStaff2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff2MouseExited
-        // TODO add your handling code here:
+        
         jLabelDeleteStaff2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_trash_20px_1.png")));
     }//GEN-LAST:event_jLabelDeleteStaff2MouseExited
 
@@ -2927,17 +2927,17 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelEditStaff2MouseClicked
 
     private void jLabelEditStaff2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEditStaff2MouseEntered
-        // TODO add your handling code here:
+        
         jLabelEditStaff2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_edit_20px_1.png")));
     }//GEN-LAST:event_jLabelEditStaff2MouseEntered
 
     private void jLabelEditStaff2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEditStaff2MouseExited
-        // TODO add your handling code here:
+        
         jLabelEditStaff2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_edit_20px.png")));
     }//GEN-LAST:event_jLabelEditStaff2MouseExited
 
     private void jLabelStatusStaff2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelStatusStaff2MouseClicked
-        // TODO add your handling code here:
+        
         setPageStaff = (countStaff % 9 == 0) ? 0 : 1;
         jLabelPageStaff.setText("/" + String.valueOf(countStaff / 9 + setPageStaff));
         int pageStaff = (Integer.parseInt(jTextFieldPageStaff.getText()) - 1) * 9;
@@ -2966,34 +2966,34 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelNameStaff2MouseClicked
 
     private void jLabelNameStaff2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff2MouseEntered
-        // TODO add your handling code here:
+        
         jLabelNameStaff2.setForeground(new java.awt.Color(0, 142, 255));
     }//GEN-LAST:event_jLabelNameStaff2MouseEntered
 
     private void jLabelNameStaff2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff2MouseExited
-        // TODO add your handling code here:
+        
         jLabelNameStaff2.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_jLabelNameStaff2MouseExited
 
     private void jLabelMessengerStaff2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMessengerStaff2MouseEntered
-        // TODO add your handling code here:
+        
         jLabelMessengerStaff2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_facebook_messenger_20px_2.png")));
         jLabelMessengerStaff2.setForeground(new java.awt.Color(0, 142, 255));
     }//GEN-LAST:event_jLabelMessengerStaff2MouseEntered
 
     private void jLabelMessengerStaff2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMessengerStaff2MouseExited
-        // TODO add your handling code here:
+        
         jLabelMessengerStaff2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_facebook_messenger_20px.png")));
         jLabelMessengerStaff2.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_jLabelMessengerStaff2MouseExited
 
     private void jLabelAvatarClick2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAvatarClick2MouseClicked
-        // TODO add your handling code here:
+        
         popUpImageStaff(1);
     }//GEN-LAST:event_jLabelAvatarClick2MouseClicked
 
     private void jLabelDeleteStaff3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff3MouseClicked
-        // TODO add your handling code here:
+        
         setPageStaff = (countStaff % 9 == 0) ? 0 : 1;
         jLabelPageStaff.setText("/" + String.valueOf(countStaff / 9 + setPageStaff));
         int pageStaff = (Integer.parseInt(jTextFieldPageStaff.getText()) - 1) * 9;
@@ -3004,17 +3004,17 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelDeleteStaff3MouseClicked
 
     private void jLabelDeleteStaff3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff3MouseEntered
-        // TODO add your handling code here:
+        
         jLabelDeleteStaff3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_trash_20px.png")));
     }//GEN-LAST:event_jLabelDeleteStaff3MouseEntered
 
     private void jLabelDeleteStaff3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff3MouseExited
-        // TODO add your handling code here:
+        
         jLabelDeleteStaff3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_trash_20px_1.png")));
     }//GEN-LAST:event_jLabelDeleteStaff3MouseExited
 
     private void jLabelStatusStaff3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelStatusStaff3MouseClicked
-        // TODO add your handling code here:
+        
         setPageStaff = (countStaff % 9 == 0) ? 0 : 1;
         jLabelPageStaff.setText("/" + String.valueOf(countStaff / 9 + setPageStaff));
         int pageStaff = (Integer.parseInt(jTextFieldPageStaff.getText()) - 1) * 9;
@@ -3035,12 +3035,12 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelEditStaff3MouseClicked
 
     private void jLabelEditStaff3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEditStaff3MouseEntered
-        // TODO add your handling code here:
+        
         jLabelEditStaff3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_edit_20px_1.png")));
     }//GEN-LAST:event_jLabelEditStaff3MouseEntered
 
     private void jLabelEditStaff3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEditStaff3MouseExited
-        // TODO add your handling code here:
+        
         jLabelEditStaff3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_edit_20px.png")));
     }//GEN-LAST:event_jLabelEditStaff3MouseExited
 
@@ -3063,29 +3063,29 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelNameStaff3MouseClicked
 
     private void jLabelNameStaff3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff3MouseEntered
-        // TODO add your handling code here:
+        
         jLabelNameStaff3.setForeground(new java.awt.Color(0, 142, 255));
     }//GEN-LAST:event_jLabelNameStaff3MouseEntered
 
     private void jLabelNameStaff3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff3MouseExited
-        // TODO add your handling code here:
+        
         jLabelNameStaff3.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_jLabelNameStaff3MouseExited
 
     private void jLabelMessengerStaff3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMessengerStaff3MouseEntered
-        // TODO add your handling code here:
+        
         jLabelMessengerStaff3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_facebook_messenger_20px_2.png")));
         jLabelMessengerStaff3.setForeground(new java.awt.Color(0, 142, 255));
     }//GEN-LAST:event_jLabelMessengerStaff3MouseEntered
 
     private void jLabelMessengerStaff3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMessengerStaff3MouseExited
-        // TODO add your handling code here:
+        
         jLabelMessengerStaff3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_facebook_messenger_20px.png")));
         jLabelMessengerStaff3.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_jLabelMessengerStaff3MouseExited
 
     private void jLabelAvatarClick3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAvatarClick3MouseClicked
-        // TODO add your handling code here:
+        
         popUpImageStaff(2);
     }//GEN-LAST:event_jLabelAvatarClick3MouseClicked
 
@@ -3172,7 +3172,7 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelMessengerStaff7MouseExited
 
     private void jLabelAvatarClick7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAvatarClick7MouseClicked
-        // TODO add your handling code here:
+        
         popUpImageStaff(6);
     }//GEN-LAST:event_jLabelAvatarClick7MouseClicked
 
@@ -3349,7 +3349,7 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelAvatarClick9MouseClicked
 
     private void jLabelDeleteStaff4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff4MouseClicked
-        // TODO add your handling code here:
+        
         setPageStaff = (countStaff % 9 == 0) ? 0 : 1;
         jLabelPageStaff.setText("/" + String.valueOf(countStaff / 9 + setPageStaff));
         int pageStaff = (Integer.parseInt(jTextFieldPageStaff.getText()) - 1) * 9;
@@ -3360,7 +3360,7 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelDeleteStaff4MouseClicked
 
     private void jLabelDeleteStaff4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff4MouseEntered
-        // TODO add your handling code here:
+        
         jLabelDeleteStaff4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_trash_20px.png")));
     }//GEN-LAST:event_jLabelDeleteStaff4MouseEntered
 
@@ -3369,7 +3369,7 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelDeleteStaff4MouseExited
 
     private void jLabelStatusStaff4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelStatusStaff4MouseClicked
-        // TODO add your handling code here:
+        
         setPageStaff = (countStaff % 9 == 0) ? 0 : 1;
         jLabelPageStaff.setText("/" + String.valueOf(countStaff / 9 + setPageStaff));
         int pageStaff = (Integer.parseInt(jTextFieldPageStaff.getText()) - 1) * 9;
@@ -3398,12 +3398,12 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelNameStaff4MouseClicked
 
     private void jLabelNameStaff4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff4MouseEntered
-        // TODO add your handling code here:
+        
         jLabelNameStaff4.setForeground(new java.awt.Color(0, 142, 255));
     }//GEN-LAST:event_jLabelNameStaff4MouseEntered
 
     private void jLabelNameStaff4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff4MouseExited
-        // TODO add your handling code here:
+        
         jLabelNameStaff4.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_jLabelNameStaff4MouseExited
 
@@ -3418,34 +3418,34 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelEditStaff4MouseClicked
 
     private void jLabelEditStaff4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEditStaff4MouseEntered
-        // TODO add your handling code here:
+        
         jLabelEditStaff4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_edit_20px_1.png")));
     }//GEN-LAST:event_jLabelEditStaff4MouseEntered
 
     private void jLabelEditStaff4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEditStaff4MouseExited
-        // TODO add your handling code here:
+        
         jLabelEditStaff4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_edit_20px.png")));
     }//GEN-LAST:event_jLabelEditStaff4MouseExited
 
     private void jLabelMessengerStaff4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMessengerStaff4MouseEntered
-        // TODO add your handling code here:
+        
         jLabelMessengerStaff4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_facebook_messenger_20px_2.png")));
         jLabelMessengerStaff4.setForeground(new java.awt.Color(0, 142, 255));
     }//GEN-LAST:event_jLabelMessengerStaff4MouseEntered
 
     private void jLabelMessengerStaff4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMessengerStaff4MouseExited
-        // TODO add your handling code here:
+        
         jLabelMessengerStaff4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_facebook_messenger_20px.png")));
         jLabelMessengerStaff4.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_jLabelMessengerStaff4MouseExited
 
     private void jLabelAvatarClick4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAvatarClick4MouseClicked
-        // TODO add your handling code here:
+        
         popUpImageStaff(3);
     }//GEN-LAST:event_jLabelAvatarClick4MouseClicked
 
     private void jLabelDeleteStaff5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff5MouseClicked
-        // TODO add your handling code here:
+        
         setPageStaff = (countStaff % 9 == 0) ? 0 : 1;
         jLabelPageStaff.setText("/" + String.valueOf(countStaff / 9 + setPageStaff));
         int pageStaff = (Integer.parseInt(jTextFieldPageStaff.getText()) - 1) * 9;
@@ -3464,7 +3464,7 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelDeleteStaff5MouseExited
 
     private void jLabelStatusStaff5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelStatusStaff5MouseClicked
-        // TODO add your handling code here:
+        
         setPageStaff = (countStaff % 9 == 0) ? 0 : 1;
         jLabelPageStaff.setText("/" + String.valueOf(countStaff / 9 + setPageStaff));
         int pageStaff = (Integer.parseInt(jTextFieldPageStaff.getText()) - 1) * 9;
@@ -3485,12 +3485,12 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelEditStaff5MouseClicked
 
     private void jLabelEditStaff5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEditStaff5MouseEntered
-        // TODO add your handling code here:
+        
         jLabelEditStaff5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_edit_20px_1.png")));
     }//GEN-LAST:event_jLabelEditStaff5MouseEntered
 
     private void jLabelEditStaff5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEditStaff5MouseExited
-        // TODO add your handling code here:
+        
         jLabelEditStaff5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_edit_20px.png")));
     }//GEN-LAST:event_jLabelEditStaff5MouseExited
 
@@ -3513,34 +3513,34 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelNameStaff5MouseClicked
 
     private void jLabelNameStaff5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff5MouseEntered
-        // TODO add your handling code here:
+        
         jLabelNameStaff5.setForeground(new java.awt.Color(0, 142, 255));
     }//GEN-LAST:event_jLabelNameStaff5MouseEntered
 
     private void jLabelNameStaff5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff5MouseExited
-        // TODO add your handling code here:
+        
         jLabelNameStaff5.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_jLabelNameStaff5MouseExited
 
     private void jLabelMessengerStaff5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMessengerStaff5MouseEntered
-        // TODO add your handling code here:
+        
         jLabelMessengerStaff5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_facebook_messenger_20px_2.png")));
         jLabelMessengerStaff5.setForeground(new java.awt.Color(0, 142, 255));
     }//GEN-LAST:event_jLabelMessengerStaff5MouseEntered
 
     private void jLabelMessengerStaff5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMessengerStaff5MouseExited
-        // TODO add your handling code here:
+        
         jLabelMessengerStaff5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_facebook_messenger_20px.png")));
         jLabelMessengerStaff5.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_jLabelMessengerStaff5MouseExited
 
     private void jLabelAvatarClick5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAvatarClick5MouseClicked
-        // TODO add your handling code here:
+        
         popUpImageStaff(4);
     }//GEN-LAST:event_jLabelAvatarClick5MouseClicked
 
     private void jLabelDeleteStaff6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDeleteStaff6MouseClicked
-        // TODO add your handling code here:
+        
         setPageStaff = (countStaff % 9 == 0) ? 0 : 1;
         jLabelPageStaff.setText("/" + String.valueOf(countStaff / 9 + setPageStaff));
         int pageStaff = (Integer.parseInt(jTextFieldPageStaff.getText()) - 1) * 9;
@@ -3559,7 +3559,7 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelDeleteStaff6MouseExited
 
     private void jLabelStatusStaff6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelStatusStaff6MouseClicked
-        // TODO add your handling code here:
+        
         setPageStaff = (countStaff % 9 == 0) ? 0 : 1;
         jLabelPageStaff.setText("/" + String.valueOf(countStaff / 9 + setPageStaff));
         int pageStaff = (Integer.parseInt(jTextFieldPageStaff.getText()) - 1) * 9;
@@ -3588,12 +3588,12 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelNameStaff6MouseClicked
 
     private void jLabelNameStaff6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff6MouseEntered
-        // TODO add your handling code here:
+        
         jLabelNameStaff6.setForeground(new java.awt.Color(0, 142, 255));
     }//GEN-LAST:event_jLabelNameStaff6MouseEntered
 
     private void jLabelNameStaff6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNameStaff6MouseExited
-        // TODO add your handling code here:
+        
         jLabelNameStaff6.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_jLabelNameStaff6MouseExited
 
@@ -3608,29 +3608,29 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelEditStaff6MouseClicked
 
     private void jLabelEditStaff6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEditStaff6MouseEntered
-        // TODO add your handling code here:
+        
         jLabelEditStaff6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_edit_20px_1.png")));
     }//GEN-LAST:event_jLabelEditStaff6MouseEntered
 
     private void jLabelEditStaff6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEditStaff6MouseExited
-        // TODO add your handling code here:
+        
         jLabelEditStaff6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_edit_20px.png")));
     }//GEN-LAST:event_jLabelEditStaff6MouseExited
 
     private void jLabelMessengerStaff6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMessengerStaff6MouseEntered
-        // TODO add your handling code here:
+        
         jLabelMessengerStaff6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_facebook_messenger_20px_2.png")));
         jLabelMessengerStaff6.setForeground(new java.awt.Color(0, 142, 255));
     }//GEN-LAST:event_jLabelMessengerStaff6MouseEntered
 
     private void jLabelMessengerStaff6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMessengerStaff6MouseExited
-        // TODO add your handling code here:
+        
         jLabelMessengerStaff6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_facebook_messenger_20px.png")));
         jLabelMessengerStaff6.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_jLabelMessengerStaff6MouseExited
 
     private void jLabelAvatarClick6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAvatarClick6MouseClicked
-        // TODO add your handling code here:
+        
         popUpImageStaff(5);
     }//GEN-LAST:event_jLabelAvatarClick6MouseClicked
 
@@ -3643,7 +3643,7 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextFieldPageStaffKeyReleased
 
     private void jLabelRight2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRight2MouseClicked
-        // TODO add your handling code here:
+        
         int jlabelrighta = Integer.parseInt(jTextFieldPageStaff.getText());
         int jlabelrightb = countStaff / 9 + setPageStaff;
         if (jlabelrighta < jlabelrightb) {
@@ -3657,17 +3657,17 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelRight2MouseClicked
 
     private void jLabelRight2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRight2MouseEntered
-        // TODO add your handling code here:
+        
         jLabelRight2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_right_20px_1.png")));
     }//GEN-LAST:event_jLabelRight2MouseEntered
 
     private void jLabelRight2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRight2MouseExited
-        // TODO add your handling code here:
+        
         jLabelRight2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_right_20px.png")));
     }//GEN-LAST:event_jLabelRight2MouseExited
 
     private void jLabelLeft2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeft2MouseClicked
-        // TODO add your handling code here:
+        
         int jlabelrighta = Integer.parseInt(jTextFieldPageStaff.getText());
         if (Integer.parseInt(jTextFieldPageStaff.getText()) > 1) {
             jTextFieldPageStaff.setText(String.valueOf(jlabelrighta - 1));
@@ -3680,17 +3680,17 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelLeft2MouseClicked
 
     private void jLabelLeft2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeft2MouseEntered
-        // TODO add your handling code here:
+        
         jLabelLeft2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_left_20px.png")));
     }//GEN-LAST:event_jLabelLeft2MouseEntered
 
     private void jLabelLeft2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeft2MouseExited
-        // TODO add your handling code here:
+        
         jLabelLeft2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_left_20px_1.png")));
     }//GEN-LAST:event_jLabelLeft2MouseExited
 
     private void jLabelSkipToEnd2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipToEnd2MouseClicked
-        // TODO add your handling code here:
+        
         int jlabelrighta = Integer.parseInt(jTextFieldPageStaff.getText());
         int jlabelrightb = countStaff / 9 + setPageStaff;
         if (jlabelrighta < jlabelrightb) {
@@ -3704,17 +3704,17 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelSkipToEnd2MouseClicked
 
     private void jLabelSkipToEnd2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipToEnd2MouseEntered
-        // TODO add your handling code here:
+        
         jLabelSkipToEnd2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_end_20px.png")));
     }//GEN-LAST:event_jLabelSkipToEnd2MouseEntered
 
     private void jLabelSkipToEnd2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipToEnd2MouseExited
-        // TODO add your handling code here:
+        
         jLabelSkipToEnd2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_end_20px_1.png")));
     }//GEN-LAST:event_jLabelSkipToEnd2MouseExited
 
     private void jLabelSkipToStart2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipToStart2MouseClicked
-        // TODO add your handling code here:
+        
         if (Integer.parseInt(jTextFieldPageStaff.getText()) > 1) {
             jTextFieldPageStaff.setText("1");
             try {
@@ -3726,12 +3726,12 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelSkipToStart2MouseClicked
 
     private void jLabelSkipToStart2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipToStart2MouseEntered
-        // TODO add your handling code here:
+        
         jLabelSkipToStart2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_skip_to_start_20px.png")));
     }//GEN-LAST:event_jLabelSkipToStart2MouseEntered
 
     private void jLabelSkipToStart2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSkipToStart2MouseExited
-        // TODO add your handling code here:
+        
         jLabelSkipToStart2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_skip_to_start_20px_1.png")));
     }//GEN-LAST:event_jLabelSkipToStart2MouseExited
 
@@ -3767,7 +3767,7 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelButtonAddStaffMouseClicked
 
     private void jLabelButtonAddStaffMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonAddStaffMouseEntered
-        // TODO add your handling code here:
+        
         jLabelBBButtonAddStaff.setIcon(scaleButtonAddStaff("/Image/ButtonEditDark.png"));
     }//GEN-LAST:event_jLabelButtonAddStaffMouseEntered
 
@@ -3788,7 +3788,7 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelButtonRefreshStaffListMouseClicked
 
     private void jLabelButtonRefreshStaffListMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonRefreshStaffListMouseEntered
-        // TODO add your handling code here:
+        
         jLabelBBButtonRefreshStaffList.setIcon(scaleButtonRefresh("/Image/ButtonEditDark.png"));
     }//GEN-LAST:event_jLabelButtonRefreshStaffListMouseEntered
 
@@ -3803,14 +3803,14 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelButtonDeleteStaffMouseClicked
 
     private void jLabelButtonDeleteStaffMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonDeleteStaffMouseEntered
-        // TODO add your handling code here:
+        
         jLabelBBButtonDeleteStaff.setIcon(scaleButtonEdit("/Image/ButtonEditDark.png"));
         jLabelButtonDeleteStaff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_trash_20px.png")));
         jLabelButtonDeleteStaff.setForeground(new java.awt.Color(255, 92, 92));
     }//GEN-LAST:event_jLabelButtonDeleteStaffMouseEntered
 
     private void jLabelButtonDeleteStaffMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonDeleteStaffMouseExited
-        // TODO add your handling code here:
+        
         jLabelBBButtonDeleteStaff.setIcon(scaleButtonEdit("/Image/ButtonEditLight.png"));
         jLabelButtonDeleteStaff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_trash_20px_1.png")));
         jLabelButtonDeleteStaff.setForeground(new java.awt.Color(0, 0, 0));
@@ -3837,22 +3837,22 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelButtonEditStaffMouseClicked
 
     private void jLabelButtonEditStaffMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonEditStaffMouseEntered
-        // TODO add your handling code here:
+        
         jLabelBBButtonEditStaff.setIcon(scaleButtonEdit("/Image/ButtonEditDark.png"));
     }//GEN-LAST:event_jLabelButtonEditStaffMouseEntered
 
     private void jLabelButtonEditStaffMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonEditStaffMouseExited
-        // TODO add your handling code here:
+        
         jLabelBBButtonEditStaff.setIcon(scaleButtonEdit("/Image/ButtonEditLight.png"));
     }//GEN-LAST:event_jLabelButtonEditStaffMouseExited
 
     private void jLabelFrameAvatarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelFrameAvatarMouseClicked
-        // TODO add your handling code here:
+        
         //        popUpImageStaff(thisStaff);
     }//GEN-LAST:event_jLabelFrameAvatarMouseClicked
 
     private void jLabelPreviousYearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousYearMouseClicked
-        // TODO add your handling code here:
+        
         selectedYear--;
         try {
             showCalendar();
@@ -3862,17 +3862,17 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelPreviousYearMouseClicked
 
     private void jLabelPreviousYearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousYearMouseEntered
-        // TODO add your handling code here:
+        
         jLabelPreviousYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_down_40px_1.png")));
     }//GEN-LAST:event_jLabelPreviousYearMouseEntered
 
     private void jLabelPreviousYearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousYearMouseExited
-        // TODO add your handling code here:
+        
         jLabelPreviousYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_down_40px.png")));
     }//GEN-LAST:event_jLabelPreviousYearMouseExited
 
     private void jLabelNextYearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextYearMouseClicked
-        // TODO add your handling code here:
+        
         selectedYear++;
         try {
             showCalendar();
@@ -3882,17 +3882,17 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelNextYearMouseClicked
 
     private void jLabelNextYearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextYearMouseEntered
-        // TODO add your handling code here:
+        
         jLabelNextYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_up_40px_1.png")));
     }//GEN-LAST:event_jLabelNextYearMouseEntered
 
     private void jLabelNextYearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextYearMouseExited
-        // TODO add your handling code here:
+        
         jLabelNextYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_up_40px.png")));
     }//GEN-LAST:event_jLabelNextYearMouseExited
 
     private void jLabelPreviousMonthMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousMonthMouseClicked
-        // TODO add your handling code here:
+        
         if (selectedMonth == 0) {
             selectedMonth = 11;
             selectedYear--;
@@ -3907,17 +3907,17 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelPreviousMonthMouseClicked
 
     private void jLabelPreviousMonthMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousMonthMouseEntered
-        // TODO add your handling code here:
+        
         jLabelPreviousMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_left_40px_1.png")));
     }//GEN-LAST:event_jLabelPreviousMonthMouseEntered
 
     private void jLabelPreviousMonthMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousMonthMouseExited
-        // TODO add your handling code here:
+        
         jLabelPreviousMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_left_40px.png")));
     }//GEN-LAST:event_jLabelPreviousMonthMouseExited
 
     private void jLabelNextMonthMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextMonthMouseClicked
-        // TODO add your handling code here:
+        
         if (selectedMonth == 11) {
             selectedMonth = 0;
             selectedYear++;
@@ -3932,12 +3932,12 @@ public class PanelStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelNextMonthMouseClicked
 
     private void jLabelNextMonthMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextMonthMouseEntered
-        // TODO add your handling code here:
+        
         jLabelNextMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_right_40px_1.png")));
     }//GEN-LAST:event_jLabelNextMonthMouseEntered
 
     private void jLabelNextMonthMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextMonthMouseExited
-        // TODO add your handling code here:
+        
         jLabelNextMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_right_40px.png")));
     }//GEN-LAST:event_jLabelNextMonthMouseExited
 

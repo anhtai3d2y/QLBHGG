@@ -16,6 +16,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import qlbhgg.models.Users;
+import qlbhgg.views.admin.bill.PanelBill;
+import qlbhgg.views.admin.customer.PanelCustomer;
+import qlbhgg.views.admin.staff.PanelStaff;
+import qlbhgg.views.admin.supplier.PanelSupplier;
+import qlbhgg.views.admin.warehouse.PanelWarehouse;
 import qlbhgg.views.login.LoginForm;
 import qlbhgg.views.staff.PanelProfileStaff;
 
@@ -301,7 +306,7 @@ public final class AdminForm extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_gear_100px_1.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/qlbhgg/Icon/icons8_overwolf_100px.png"))); // NOI18N
         jLabel6.setText("KMA-Gear");
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelMenu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 150));
@@ -670,124 +675,67 @@ public final class AdminForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBackgroundMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBackgroundMousePressed
-        // TODO add your handling code here:
+        
         XX = evt.getX();
         YY = evt.getY();
     }//GEN-LAST:event_jBackgroundMousePressed
 
     private void jBackgroundMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBackgroundMouseDragged
-        // TODO add your handling code here:
+        
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - XX, y - YY);
     }//GEN-LAST:event_jBackgroundMouseDragged
 
     private void jPanelQLDHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelQLDHMouseClicked
-        // TODO add your handling code here:
-//        qlhd = true;
-//        qlk = false;
-//        qlnv = false;
-//        qlncc = false;
-//        tk = false;
-//        ttkh = false;
-//        jPanelQLDH.setBackground(new java.awt.Color(102, 178, 255));
-//        jPanelQLK.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLNV.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLNCC.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelTK.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelTTKH.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelBody.removeAll();
-//        jPanelBody.add(jDashboardQLDH);
-//        jPanelBody.repaint();
-//        jPanelBody.revalidate();
+       jPanelBody.removeAll();
+        try {
+            jPanelBody.add(new PanelBill());
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jPanelBody.validate();
+        jPanelBody.repaint();
     }//GEN-LAST:event_jPanelQLDHMouseClicked
 
     private void jPanelQLKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelQLKMouseClicked
-        // TODO add your handling code here:
-//        qlhd = false;
-//        qlk = true;
-//        qlnv = false;
-//        qlncc = false;
-//        tk = false;
-//        ttkh = false;
-//        jPanelQLDH.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLK.setBackground(new java.awt.Color(102, 178, 255));
-//        jPanelQLNV.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLNCC.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelTK.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelTTKH.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelBody.removeAll();
-////        jPanelBody.repaint();
-////        jPanelBody.revalidate();
-//        jPanelBody.add(jDashboardQLK);
-//        jPanelBody.repaint();
-//        jPanelBody.revalidate();
+        jPanelBody.removeAll();
+        try {
+            jPanelBody.add(new PanelWarehouse());
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jPanelBody.validate();
+        jPanelBody.repaint();
     }//GEN-LAST:event_jPanelQLKMouseClicked
 
     private void jPanelQLNCCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelQLNCCMouseClicked
-        // TODO add your handling code here:
-//        qlhd = false;
-//        qlk = false;
-//        qlnv = false;
-//        qlncc = true;
-//        tk = false;
-//        ttkh = false;
-//        jPanelQLDH.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLK.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLNV.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLNCC.setBackground(new java.awt.Color(102, 178, 255));
-//        jPanelTK.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelTTKH.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelBody.removeAll();
-////        jPanelBody.repaint();
-////        jPanelBody.revalidate();
-//        jPanelBody.add(jDashboardQLNCC);
-//        jPanelBody.repaint();
-//        jPanelBody.revalidate();
+        jPanelBody.removeAll();
+        try {
+            jPanelBody.add(new PanelSupplier());
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jPanelBody.validate();
+        jPanelBody.repaint();
     }//GEN-LAST:event_jPanelQLNCCMouseClicked
 
     private void jPanelQLNVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelQLNVMouseClicked
-        // TODO add your handling code here:
-//        qlhd = false;
-//        qlk = false;
-//        qlnv = true;
-//        qlncc = false;
-//        tk = false;
-//        ttkh = false;
-//        jPanelQLDH.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLK.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLNV.setBackground(new java.awt.Color(102, 178, 255));
-//        jPanelQLNCC.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelTK.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelTTKH.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelBody.removeAll();
-////        jPanelBody.repaint();
-////        jPanelBody.revalidate();
-//        jPanelBody.add(jDashboardQLNV);
-//        jPanelBody.repaint();
-//        jPanelBody.revalidate();
+        jPanelBody.removeAll();
+        try {
+            jPanelBody.add(new PanelStaff());
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jPanelBody.validate();
+        jPanelBody.repaint();
     }//GEN-LAST:event_jPanelQLNVMouseClicked
 
     private void jPanelTKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelTKMouseClicked
-        // TODO add your handling code here:
-//        qlhd = false;
-//        qlk = false;
-//        qlnv = false;
-//        qlncc = false;
-//        tk = true;
-//        ttkh = false;
-//        jPanelQLDH.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLK.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLNV.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLNCC.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelTK.setBackground(new java.awt.Color(102, 178, 255));
-//        jPanelTTKH.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelBody.removeAll();
-////        jPanelBody.repaint();
-////        jPanelBody.revalidate();
-//        jPanelBody.add(jDashboardTK);
-//        jPanelBody.repaint();
-//        jPanelBody.revalidate();
+        jPanelBody.removeAll();
+        jPanelBody.add(new PanelStatistical());
+        jPanelBody.validate();
+        jPanelBody.repaint();
     }//GEN-LAST:event_jPanelTKMouseClicked
 
     private void jPanelQLDHMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelQLDHMouseEntered
@@ -831,25 +779,14 @@ public final class AdminForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelTKMouseExited
 
     private void jPanelTTKHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelTTKHMouseClicked
-        // TODO add your handling code here:
-//        qlhd = false;
-//        qlk = false;
-//        qlnv = false;
-//        qlncc = false;
-//        tk = false;
-//        ttkh = true;
-//        jPanelQLDH.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLK.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLNV.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelQLNCC.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelTK.setBackground(new java.awt.Color(0, 0, 0));
-//        jPanelTTKH.setBackground(new java.awt.Color(102, 178, 255));
-//        jPanelBody.removeAll();
-////        jPanelBody.repaint();
-////        jPanelBody.revalidate();
-//        jPanelBody.add(jDashboardTTKH);
-//        jPanelBody.repaint();
-//        jPanelBody.revalidate();
+        jPanelBody.removeAll();
+        try {
+            jPanelBody.add(new PanelCustomer());
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jPanelBody.validate();
+        jPanelBody.repaint();
     }//GEN-LAST:event_jPanelTTKHMouseClicked
 
     private void jPanelTTKHMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelTTKHMouseEntered
@@ -902,49 +839,49 @@ public final class AdminForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelUserLoginMouseClicked
 
     private void jPanelProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelProfileMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jPanelProfileMouseClicked
 
     private void jPanelProfileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelProfileMouseEntered
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jPanelProfileMouseEntered
 
     private void jPanelProfileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelProfileMouseExited
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jPanelProfileMouseExited
 
     private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
-        // TODO add your handling code here:
+        
         System.exit(0);
     }//GEN-LAST:event_btnExitMouseClicked
 
     private void btnExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseEntered
-        // TODO add your handling code here:
+        
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_3.png")));
     }//GEN-LAST:event_btnExitMouseEntered
 
     private void btnExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseExited
-        // TODO add your handling code here:
+        
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_4.png")));
     }//GEN-LAST:event_btnExitMouseExited
 
     private void btnMinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseClicked
-        // TODO add your handling code here:
+        
         this.setExtendedState(AdminForm.ICONIFIED);
     }//GEN-LAST:event_btnMinimizeMouseClicked
 
     private void btnMinimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseEntered
-        // TODO add your handling code here:
+        
         btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_minimize_window_25px_1.png")));
     }//GEN-LAST:event_btnMinimizeMouseEntered
 
     private void btnMinimizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseExited
-        // TODO add your handling code here:
+        
         btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_minimize_window_25px_2.png")));
     }//GEN-LAST:event_btnMinimizeMouseExited
 
     private void jLabelUserLoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUserLoginMouseEntered
-        // TODO add your handling code here:
+        
         jLabelUserLogin.setForeground(new java.awt.Color(102,178,255));
         jLabelUserLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_profiles_20px.png")));
     }//GEN-LAST:event_jLabelUserLoginMouseEntered

@@ -12,7 +12,7 @@ import java.sql.*;
 public class Database {
     private static Database instance = null;
 
-    private static final String JDBC_STRING = "jdbc:mysql://localhost:4000";
+    private static final String JDBC_STRING = "jdbc:mysql://localhost";
     private static final String DB_NAME = "qlbh";
     private static final String DB_USER = "root";
     private static final String DB_PASS = "";

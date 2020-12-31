@@ -1157,14 +1157,14 @@ public class PanelInforStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelButtonDeleteStaffMouseClicked
 
     private void jLabelButtonDeleteStaffMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonDeleteStaffMouseEntered
-        // TODO add your handling code here:
+        
         jLabelBBButtonDeleteStaff.setIcon(scaleButtonEdit("/Image/ButtonEditDark.png"));
         jLabelButtonDeleteStaff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_trash_20px.png")));
         jLabelButtonDeleteStaff.setForeground(new java.awt.Color(255, 92, 92));
     }//GEN-LAST:event_jLabelButtonDeleteStaffMouseEntered
 
     private void jLabelButtonDeleteStaffMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonDeleteStaffMouseExited
-        // TODO add your handling code here:
+        
         jLabelBBButtonDeleteStaff.setIcon(scaleButtonEdit("/Image/ButtonEditLight.png"));
         jLabelButtonDeleteStaff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_trash_20px_1.png")));
         jLabelButtonDeleteStaff.setForeground(new java.awt.Color(0, 0, 0));
@@ -1185,7 +1185,7 @@ public class PanelInforStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelButtonStatusStaffMouseExited
 
     private void jLabelBackToQLNVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBackToQLNVMouseClicked
-        // TODO add your handling code here:
+        
 //        if(profile){
 //            jLabelBackToQLNV.setForeground(new java.awt.Color(0, 0, 0));
 //            jLabelBackToQLNV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_back_20px.png")));
@@ -1211,13 +1211,13 @@ public class PanelInforStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelBackToQLNVMouseClicked
 
     private void jLabelBackToQLNVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBackToQLNVMouseEntered
-        // TODO add your handling code here:
+        
         jLabelBackToQLNV.setForeground(new java.awt.Color(0, 142, 255));
         jLabelBackToQLNV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_back_20px_1.png")));
     }//GEN-LAST:event_jLabelBackToQLNVMouseEntered
 
     private void jLabelBackToQLNVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBackToQLNVMouseExited
-        // TODO add your handling code here:
+        
         jLabelBackToQLNV.setForeground(new java.awt.Color(0, 0, 0));
         jLabelBackToQLNV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_back_20px.png")));
     }//GEN-LAST:event_jLabelBackToQLNVMouseExited
@@ -1229,22 +1229,22 @@ public class PanelInforStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelButtonEditStaffMouseClicked
 
     private void jLabelButtonEditStaffMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonEditStaffMouseEntered
-        // TODO add your handling code here:
+        
         jLabelBBButtonEditStaff.setIcon(scaleButtonEdit("/Image/ButtonEditDark.png"));
     }//GEN-LAST:event_jLabelButtonEditStaffMouseEntered
 
     private void jLabelButtonEditStaffMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonEditStaffMouseExited
-        // TODO add your handling code here:
+        
         jLabelBBButtonEditStaff.setIcon(scaleButtonEdit("/Image/ButtonEditLight.png"));
     }//GEN-LAST:event_jLabelButtonEditStaffMouseExited
 
     private void jLabelFrameAvatarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelFrameAvatarMouseClicked
-        // TODO add your handling code here:
+        
 //        popUpImageStaff(thisStaff);
     }//GEN-LAST:event_jLabelFrameAvatarMouseClicked
 
     private void jLabelPreviousYearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousYearMouseClicked
-        // TODO add your handling code here:
+        
         selectedYear--;
         try {
             showCalendar();
@@ -1254,17 +1254,17 @@ public class PanelInforStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelPreviousYearMouseClicked
 
     private void jLabelPreviousYearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousYearMouseEntered
-        // TODO add your handling code here:
+        
         jLabelPreviousYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_down_40px_1.png")));
     }//GEN-LAST:event_jLabelPreviousYearMouseEntered
 
     private void jLabelPreviousYearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousYearMouseExited
-        // TODO add your handling code here:
+        
         jLabelPreviousYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_down_40px.png")));
     }//GEN-LAST:event_jLabelPreviousYearMouseExited
 
     private void jLabelNextYearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextYearMouseClicked
-        // TODO add your handling code here:
+        
         selectedYear++;
         try {
             showCalendar();
@@ -1274,17 +1274,17 @@ public class PanelInforStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelNextYearMouseClicked
 
     private void jLabelNextYearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextYearMouseEntered
-        // TODO add your handling code here:
+        
         jLabelNextYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_up_40px_1.png")));
     }//GEN-LAST:event_jLabelNextYearMouseEntered
 
     private void jLabelNextYearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextYearMouseExited
-        // TODO add your handling code here:
+        
         jLabelNextYear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_up_40px.png")));
     }//GEN-LAST:event_jLabelNextYearMouseExited
 
     private void jLabelPreviousMonthMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousMonthMouseClicked
-        // TODO add your handling code here:
+        
         if (selectedMonth == 0) {
             selectedMonth = 11;
             selectedYear--;
@@ -1299,17 +1299,17 @@ public class PanelInforStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelPreviousMonthMouseClicked
 
     private void jLabelPreviousMonthMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousMonthMouseEntered
-        // TODO add your handling code here:
+        
         jLabelPreviousMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_left_40px_1.png")));
     }//GEN-LAST:event_jLabelPreviousMonthMouseEntered
 
     private void jLabelPreviousMonthMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPreviousMonthMouseExited
-        // TODO add your handling code here:
+        
         jLabelPreviousMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_left_40px.png")));
     }//GEN-LAST:event_jLabelPreviousMonthMouseExited
 
     private void jLabelNextMonthMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextMonthMouseClicked
-        // TODO add your handling code here:
+        
         if (selectedMonth == 11) {
             selectedMonth = 0;
             selectedYear++;
@@ -1324,12 +1324,12 @@ public class PanelInforStaff extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabelNextMonthMouseClicked
 
     private void jLabelNextMonthMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextMonthMouseEntered
-        // TODO add your handling code here:
+        
         jLabelNextMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_right_40px_1.png")));
     }//GEN-LAST:event_jLabelNextMonthMouseEntered
 
     private void jLabelNextMonthMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNextMonthMouseExited
-        // TODO add your handling code here:
+        
         jLabelNextMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_chevron_right_40px.png")));
     }//GEN-LAST:event_jLabelNextMonthMouseExited
 

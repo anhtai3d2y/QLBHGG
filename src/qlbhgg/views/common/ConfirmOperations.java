@@ -8,8 +8,6 @@ package qlbhgg.views.common;
 import qlbhgg.dao.UsersDao;
 import qlbhgg.models.Users;
 import java.awt.Image;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -172,12 +170,12 @@ public class ConfirmOperations extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelButtonCancelMouseExited
 
     private void jLabelButtonCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonCancelMouseClicked
-        // TODO add your handling code here:
+        
         this.dispose();
     }//GEN-LAST:event_jLabelButtonCancelMouseClicked
 
     private void jLabelButtonOkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonOkMouseClicked
-        // TODO add your handling code here:
+        
         System.out.println(user.toString());
         if(user.getStatus().equals("Hoạt động")){
             user.setStatus("Khóa");
@@ -197,17 +195,17 @@ public class ConfirmOperations extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelButtonOkMouseClicked
 
     private void jLabelButtonOk1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonOk1MouseClicked
-        // TODO add your handling code here:
+        
         this.dispose();
     }//GEN-LAST:event_jLabelButtonOk1MouseClicked
 
     private void jLabelButtonOk1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonOk1MouseEntered
-        // TODO add your handling code here:
+        
         jLabelButtonOk1.setIcon(scaleImage("/Image/SignButtonGray.png"));
     }//GEN-LAST:event_jLabelButtonOk1MouseEntered
 
     private void jLabelButtonOk1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelButtonOk1MouseExited
-        // TODO add your handling code here:
+        
         jLabelButtonOk1.setIcon(scaleImage("/Image/SignButtonBlue.png"));
     }//GEN-LAST:event_jLabelButtonOk1MouseExited
 

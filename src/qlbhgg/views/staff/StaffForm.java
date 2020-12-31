@@ -16,6 +16,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import qlbhgg.models.Users;
+import qlbhgg.views.admin.PanelStatistical;
+import qlbhgg.views.admin.bill.PanelBill;
+import qlbhgg.views.admin.customer.PanelCustomer;
 import qlbhgg.views.common.DisplayImage;
 
 /**
@@ -33,8 +36,6 @@ public class StaffForm extends javax.swing.JFrame {
     public StaffForm(Users u) throws SQLException {
         userLogin = u;
         initComponents();
-//        jLabelUserLogin.setText(userLogin.getFullname());
-
         SetDashboard sd = new SetDashboard(jPanelBody);
         sd.setStaffView(jPanelQLBH, jLabelQLBH);
         ArrayList<ListKind> list = new ArrayList<>();
@@ -44,6 +45,10 @@ public class StaffForm extends javax.swing.JFrame {
         list.add(new ListKind("TTKH", jPanelTTKH, jLabelTTKH));
         list.add(new ListKind("TK", jPanelTK, jLabelTK));
         sd.setEvent(list);
+        jPanelBody.removeAll();
+        jPanelBody.add(new PanelSale());
+        jPanelBody.validate();
+        jPanelBody.repaint();
     }
 
     private ImageIcon scaleFrameSearch(String path) {
@@ -148,7 +153,7 @@ public class StaffForm extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_gear_100px_1.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/qlbhgg/Icon/icons8_overwolf_100px.png"))); // NOI18N
         jLabel6.setText("KMA-Gear");
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelMenu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 150));
@@ -367,7 +372,7 @@ public class StaffForm extends javax.swing.JFrame {
         jBackground.add(jPanelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 900));
 
         jPanelBody.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelBody.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelBody.setLayout(new java.awt.CardLayout());
         jBackground.add(jPanelBody, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 1330, 870));
 
         jPanelBar.setBackground(new java.awt.Color(0, 0, 0));
@@ -443,32 +448,32 @@ public class StaffForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
-        // TODO add your handling code here:
+        
         System.exit(0);
     }//GEN-LAST:event_btnExitMouseClicked
 
     private void btnExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseEntered
-        // TODO add your handling code here:
+        
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_3.png")));
     }//GEN-LAST:event_btnExitMouseEntered
 
     private void btnExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseExited
-        // TODO add your handling code here:
+        
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_close_window_25px_4.png")));
     }//GEN-LAST:event_btnExitMouseExited
 
     private void btnMinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseClicked
-        // TODO add your handling code here:
+        
         this.setExtendedState(AdminForm.ICONIFIED);
     }//GEN-LAST:event_btnMinimizeMouseClicked
 
     private void btnMinimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseEntered
-        // TODO add your handling code here:
+        
         btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_minimize_window_25px_1.png")));
     }//GEN-LAST:event_btnMinimizeMouseEntered
 
     private void btnMinimizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseExited
-        // TODO add your handling code here:
+        
         btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_minimize_window_25px_2.png")));
     }//GEN-LAST:event_btnMinimizeMouseExited
 
@@ -503,7 +508,14 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelLogoutMouseExited
 
     private void jPanelQLBHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelQLBHMouseClicked
-        
+        jPanelBody.removeAll();
+        try {
+            jPanelBody.add(new PanelSale());
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jPanelBody.validate();
+        jPanelBody.repaint();
     }//GEN-LAST:event_jPanelQLBHMouseClicked
 
     private void jPanelQLBHMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelQLBHMouseEntered
@@ -515,7 +527,14 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelQLBHMouseExited
 
     private void jPanelQLDHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelQLDHMouseClicked
-       
+       jPanelBody.removeAll();
+        try {
+            jPanelBody.add(new PanelBill());
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jPanelBody.validate();
+        jPanelBody.repaint();
     }//GEN-LAST:event_jPanelQLDHMouseClicked
 
     private void jPanelQLDHMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelQLDHMouseEntered
@@ -527,7 +546,14 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelQLDHMouseExited
 
     private void jPanelTTKHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelTTKHMouseClicked
-       
+       jPanelBody.removeAll();
+        try {
+            jPanelBody.add(new PanelCustomer());
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jPanelBody.validate();
+        jPanelBody.repaint();
     }//GEN-LAST:event_jPanelTTKHMouseClicked
 
     private void jPanelTTKHMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelTTKHMouseEntered
@@ -539,7 +565,10 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelTTKHMouseExited
 
     private void jPanelTKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelTKMouseClicked
-        
+        jPanelBody.removeAll();
+        jPanelBody.add(new PanelStatistical());
+        jPanelBody.validate();
+        jPanelBody.repaint();
     }//GEN-LAST:event_jPanelTKMouseClicked
 
     private void jPanelTKMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelTKMouseEntered
@@ -573,15 +602,15 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelUserLoginMouseClicked
 
     private void jPanelProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelProfileMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jPanelProfileMouseClicked
 
     private void jPanelProfileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelProfileMouseEntered
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jPanelProfileMouseEntered
 
     private void jPanelProfileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelProfileMouseExited
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jPanelProfileMouseExited
 
     private void jLabelUserLoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUserLoginMouseEntered

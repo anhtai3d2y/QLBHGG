@@ -127,7 +127,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icon/icons8_gear_100px_1.png"/>
+                  <Image iconType="3" name="/qlbhgg/Icon/icons8_overwolf_100px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="KMA-Gear"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">

@@ -5,26 +5,31 @@
  */
 package qlbhgg.dao;
 
-import java.sql.Connection;
+import qlbhgg.models.Bill;
+import qlbhgg.models.Users;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import qlbhgg.models.Bill;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author acer
  */
 public class BillDao {
-
     @SuppressWarnings("empty-statement")
     public static ArrayList<Bill> findAllBill() throws SQLException {
         ArrayList<Bill> ListBill = new ArrayList<>();
-        Connection connection = Database.getInstance().getConnection();
+        java.sql.Connection connection = null;
+        Statement statement = null;
         try {
-            Statement statement = connection.createStatement();
-            String sql = "select * from bill";
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
+            statement = connection.createStatement();
+            String sql = "SELECT * FROM `bill` ORDER BY `bill`.`code_bill` DESC";
             ResultSet resulSet = statement.executeQuery(sql);
             while (resulSet.next()) {
                 Bill b = Bill.getFromResultSet(resulSet);
@@ -32,65 +37,162 @@ public class BillDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Bill.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Bill.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        };
         return ListBill;
     }
-
+    
     @SuppressWarnings("empty-statement")
     public static int countBill() throws SQLException {
         int count = 0;
-        Connection connection = Database.getInstance().getConnection();
+        java.sql.Connection connection = null;
+        Statement statement = null;
         try {
-            Statement statement = connection.createStatement();
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
+            statement = connection.createStatement();
             String sql = "select count(code_bill) as count_bill from bill";
             ResultSet resulSet = statement.executeQuery(sql);
             if (resulSet.next()) {
                 count = resulSet.getInt("count_bill");
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Bill.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Bill.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        };
         return count;
     }
-
+    
     public static ArrayList<Bill> searchBill(String str) {
         ArrayList<Bill> ListBills = new ArrayList<Bill>();
-
-        Connection connection = Database.getInstance().getConnection();
+        java.sql.Connection connection = null;
+        Statement statement = null;
         try {
-            Statement statement = connection.createStatement();
-            String sql = "SELECT DISTINCT bill.code_bill, bill.customer_code, bill.id_user, bill.id_user, bill.invoice_creation_date, bill.note FROM ((((bill JOIN invoicedetails on bill.code_bill = invoicedetails.code_bill) JOIN users on users.id_user = bill.id_user) JOIN goods on goods.item_code = invoicedetails.item_code) JOIN supplier ON supplier.company_code = goods.company_code) JOIN typeofgoods on typeofgoods.type_code = goods.type_code WHERE (bill.code_bill LIKE '%" + str + "%' OR bill.customer_code LIKE '%" + str + "%' OR bill.id_user LIKE '%" + str + "%' OR bill.invoice_creation_date LIKE '%" + str + "%' OR invoicedetails.price LIKE '%" + str + "%' OR invoicedetails.amount LIKE '%" + str + "%' OR goods.item_name LIKE '%" + str + "%' OR goods.company_code LIKE '%" + str + "%' OR goods.type_code LIKE '%" + str + "%' OR supplier.company_name LIKE '%" + str + "%' OR typeofgoods.type_name LIKE '%" + str + "%' OR users.full_name LIKE '%" + str + "%')";
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
+            String sql = "SELECT DISTINCT bill.code_bill, bill.customer_code, bill.id_user, bill.id_user, bill.invoice_creation_date, bill.note FROM ((((bill JOIN invoicedetails on bill.code_bill = invoicedetails.code_bill) JOIN users on users.id_user = bill.id_user) JOIN goods on goods.item_code = invoicedetails.item_code) JOIN supplier ON supplier.company_code = goods.company_code) JOIN typeofgoods on typeofgoods.type_code = goods.type_code WHERE (bill.code_bill LIKE '%" + str +"%' OR bill.customer_code LIKE '%" + str +"%' OR bill.id_user LIKE '%" + str +"%' OR bill.invoice_creation_date LIKE '%" + str +"%' OR invoicedetails.price LIKE '%" + str +"%' OR invoicedetails.amount LIKE '%" + str +"%' OR goods.item_name LIKE '%" + str +"%' OR goods.company_code LIKE '%" + str +"%' OR goods.type_code LIKE '%" + str +"%' OR supplier.company_name LIKE '%" + str +"%' OR typeofgoods.type_name LIKE '%" + str +"%' OR users.full_name LIKE '%" + str +"%')";
             statement = connection.createStatement();
             ResultSet resulSet = statement.executeQuery(sql);
-            while (resulSet.next()) {
+            while(resulSet.next()){
                 Bill b = Bill.getFromResultSet(resulSet);
                 ListBills.add(b);
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Bill.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Bill.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
         return ListBills;
     }
-
+    
     public static int countsearchBill(String str) {
         int count = 0;
-
-        Connection connection = Database.getInstance().getConnection();
+        java.sql.Connection connection = null;
+        Statement statement = null;
         try {
-            Statement statement = connection.createStatement();
-            String sql = "SELECT count(bill.code_bill) as count_searchbill FROM ((((bill JOIN invoicedetails on bill.code_bill = invoicedetails.code_bill) JOIN users on users.id_user = bill.id_user) JOIN goods on goods.item_code = invoicedetails.item_code) JOIN supplier ON supplier.company_code = goods.company_code) JOIN typeofgoods on typeofgoods.type_code = goods.type_code WHERE (bill.code_bill LIKE '%" + str + "%' OR bill.customer_code LIKE '%" + str + "%' OR bill.id_user LIKE '%" + str + "%' OR bill.invoice_creation_date LIKE '%" + str + "%' OR invoicedetails.price LIKE '%" + str + "%' OR invoicedetails.amount LIKE '%" + str + "%' OR goods.item_name LIKE '%" + str + "%' OR goods.company_code LIKE '%" + str + "%' OR goods.type_code LIKE '%" + str + "%' OR supplier.company_name LIKE '%" + str + "%' OR typeofgoods.type_name LIKE '%" + str + "%' OR users.full_name LIKE '%" + str + "%')";
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
+            String sql = "SELECT count(bill.code_bill) as count_searchbill FROM ((((bill JOIN invoicedetails on bill.code_bill = invoicedetails.code_bill) JOIN users on users.id_user = bill.id_user) JOIN goods on goods.item_code = invoicedetails.item_code) JOIN supplier ON supplier.company_code = goods.company_code) JOIN typeofgoods on typeofgoods.type_code = goods.type_code WHERE (bill.code_bill LIKE '%" + str +"%' OR bill.customer_code LIKE '%" + str +"%' OR bill.id_user LIKE '%" + str +"%' OR bill.invoice_creation_date LIKE '%" + str +"%' OR invoicedetails.price LIKE '%" + str +"%' OR invoicedetails.amount LIKE '%" + str +"%' OR goods.item_name LIKE '%" + str +"%' OR goods.company_code LIKE '%" + str +"%' OR goods.type_code LIKE '%" + str +"%' OR supplier.company_name LIKE '%" + str +"%' OR typeofgoods.type_name LIKE '%" + str +"%' OR users.full_name LIKE '%" + str +"%')";
             statement = connection.createStatement();
             ResultSet resulSet = statement.executeQuery(sql);
-            if (resulSet.next()) {
-                count = resulSet.getInt("count_searchbill");
+            if(resulSet.next()){
+                count  = resulSet.getInt("count_searchbill");
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Bill.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Bill.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
         return count;
     }
+    public static void addBill(Bill b) {
+        java.sql.Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/qlbh", "root", "");
+            String sql = "INSERT INTO `bill`(`code_bill`, `customer_code`, `id_user`, `invoice_creation_date`, `note`) VALUES (?,?,?,?,?)";
+            statement = connection.prepareCall(sql);
 
+            statement.setString(1, b.getCodebill());
+            statement.setString(2, b.getCustomercode());
+            statement.setString(3, b.getIduser());
+            
+            java.sql.Date creationDate =  new java.sql.Date(b.getCreationdate().getTime());
+            statement.setDate(4, creationDate);
+            statement.setString(5, b.getNote());
+
+            statement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
+    
     public static void main(String[] args) throws SQLException {
         int count = BillDao.countsearchBill("B000000001");
         System.out.println(count);
